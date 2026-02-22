@@ -3,17 +3,28 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>BCWbruxelles — Soutien scolaire (secondaire & supérieur)</title>
   <meta name="description" content="BCWbruxelles : cours particuliers, aide aux devoirs, préparation examens. Secondaire + supérieur (université & haute école). En ligne, à domicile ou en locaux." />
+
+  <!-- ✅ Favicon : enlève le “G” et met votre logo dans l’onglet -->
+  <!-- Tu vas ajouter ces fichiers dans assets/ -->
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#FF9D19">
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
 <header>
   <div class="container navbar">
+    <!-- ======================
+         BRAND (logo + nom)
+         ====================== -->
     <a class="brand" href="index.html">
       <div class="brand-logo" aria-label="Logo BCWbruxelles">
-        <!-- ✅ VOTRE LOGO (mettez votre fichier ici) -->
+        <!-- IMPORTANT : le nom du fichier doit être exactement assets/logo-bcw.png -->
         <img src="assets/logo-bcw.png" alt="Logo BCWbruxelles"
              onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;pill orange&quot;>BCW</span>';">
       </div>
@@ -23,6 +34,9 @@
       </div>
     </a>
 
+    <!-- ======================
+         NAVIGATION
+         ====================== -->
     <nav>
       <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -38,6 +52,9 @@
   </div>
 </header>
 
+<!-- ======================
+     HERO
+     ====================== -->
 <section class="hero">
   <div class="container hero-wrap">
     <div>
@@ -46,9 +63,20 @@
         <span class="pill orange">Réponse rapide</span>
       </div>
 
+      <!-- ✅ LOGO MIS EN ÉVIDENCE -->
+      <div class="hero-mark">
+        <div class="hero-logo">
+          <img src="assets/logo-bcw.png" alt="Logo BCWbruxelles">
+        </div>
+        <div class="hero-brand">
+          <strong>BCWbruxelles</strong>
+          <span>Diplômés Solvay Brussels School (alumni)</span>
+        </div>
+      </div>
+
       <h1 class="h1">Soutien scolaire efficace, avec une méthode claire.</h1>
       <p class="lead">
-        On aide les élèves du <b>secondaire</b> et les étudiants en <b>supérieur</b> (univ / haute école)
+        On aide les élèves du <b>secondaire</b> et les étudiants du <b>supérieur</b> (univ / haute école)
         à comprendre, s’organiser et réussir : devoirs, examens, rattrapage, méthode.
       </p>
 
@@ -58,7 +86,7 @@
       </div>
 
       <div class="kpis">
-        <div class="kpi"><strong>Secondaire</strong><span>Aide aux devoirs & examens</span></div>
+        <div class="kpi"><strong>Secondaire</strong><span>Devoirs & examens</span></div>
         <div class="kpi"><strong>Supérieur</strong><span>Univ & haute école</span></div>
         <div class="kpi"><strong>Formats</strong><span>Online • domicile • locaux</span></div>
         <div class="kpi"><strong>Suivi</strong><span>Plan + exercices ciblés</span></div>
@@ -66,72 +94,56 @@
     </div>
 
     <div class="hero-card">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
-        <h3 style="margin:0">BCWbruxelles</h3>
-
-        <!-- ✅ OPTIONNEL : logo Solvay Brussels School (si vous êtes ok niveau droit d’usage) -->
-        <div style="display:flex;align-items:center;gap:10px">
-          <span class="tag blue">Diplômés SBS</span>
-          <!-- Placez l’image fournie ici : assets/sbs-logo.png -->
-          <img src="assets/sbs-logo.png" alt="Solvay Brussels School" style="width:44px;height:44px;border-radius:14px;border:1px solid var(--border)"
-               onerror="this.style.display='none'">
-        </div>
-      </div>
-
+      <h3 style="margin:0">Comment on vous aide</h3>
       <p style="margin:10px 0 0;color:var(--muted);font-weight:700">
-        3 membres (Bilal, Sami, Walid). Expérience : tutorat, secondaire, cours privés, agrégation.
-        On s’adapte à votre besoin et on délègue si la demande augmente.
+        On identifie rapidement ce qui bloque, on fixe un objectif clair, puis on travaille avec une méthode + exercices ciblés.
+        Après la séance, on peut aussi donner un mini plan de révision (si souhaité).
       </p>
 
-      <div class="callout" style="margin-top:14px;">
-        <strong>Groupes (collab La Source)</strong><br>
-        <span style="font-weight:800">200€ / mois</span> — 2h × 2/semaine (≈16h/mois), 8–10 personnes.
-      </div>
-
-      <div class="meta">
+      <div class="meta" style="margin-top:14px;">
         <span class="tag orange">Objectif examen</span>
         <span class="tag blue">Méthodo</span>
         <span class="tag">Rattrapage</span>
         <span class="tag">Confiance</span>
       </div>
+
+      <div style="margin-top:14px;">
+        <a class="btn blue" href="inscription.html">Faire une demande</a>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- ======================
+     OFFRES (✅ 2 OFFRES, SANS PRIX, SANS “LA SOURCE”)
+     ====================== -->
 <section class="section" id="offres">
   <div class="container">
     <h2>Offres</h2>
-    <p>Choisis un format. Pour les cours particuliers, on fait un <b>devis personnalisé</b> (selon niveau, matière, fréquence, lieu).</p>
+    <p>
+      On propose un accompagnement adapté à votre besoin. Le tarif varie selon le niveau, la matière, le format et la fréquence,
+      donc on propose un <b>devis personnalisé</b> après inscription.
+    </p>
 
-    <div class="grid-3">
+    <!-- ✅ 2 cartes seulement -->
+    <div class="grid-2">
       <div class="card highlight">
-        <h3>Groupes — La Source</h3>
-        <p>Rythme régulier, progression continue, entraide + exercices.</p>
-        <div class="price"><strong>200€</strong><span>/ mois</span></div>
-        <div class="meta">
-          <span class="tag orange">8–10 personnes</span>
-          <span class="tag">2h × 2 / semaine</span>
-          <span class="tag blue">≈16h / mois</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>Cours particuliers</h3>
-        <p>Sur mesure (secondaire & supérieur). Online, domicile ou locaux si dispo.</p>
+        <h3>Cours particuliers (sur mesure)</h3>
+        <p>Accompagnement 1-to-1 ou petit groupe privé, adapté à l’objectif (rattrapage, examen, méthode…).</p>
         <div class="meta">
           <span class="tag blue">Devis personnalisé</span>
-          <span class="tag">Prépa examen</span>
-          <span class="tag">Coaching méthode</span>
+          <span class="tag">En ligne / domicile</span>
+          <span class="tag orange">Préparation examen</span>
         </div>
       </div>
 
       <div class="card">
-        <h3>Aide aux devoirs</h3>
-        <p>Organisation, régularité, compréhension, reprise de confiance.</p>
+        <h3>Aide aux devoirs & méthodologie</h3>
+        <p>Organisation, régularité, compréhension, plan de travail. Idéal pour reprendre confiance et progresser.</p>
         <div class="meta">
           <span class="tag">Secondaire</span>
           <span class="tag orange">Plan de travail</span>
-          <span class="tag">Suivi</span>
+          <span class="tag blue">Suivi</span>
         </div>
       </div>
     </div>
@@ -142,22 +154,25 @@
         <p style="font-weight:750;color:var(--muted)">
           1) Inscription (2 minutes)<br>
           2) On vous contacte (objectif + dispo)<br>
-          3) On propose format + devis si besoin<br>
+          3) On propose format + devis<br>
           4) Démarrage + suivi
         </p>
       </div>
 
       <div class="card">
-        <h3>Vous avez un gros objectif ?</h3>
-        <p>Examen, rattrapage, mémoire, partiels… On construit un plan + exercices ciblés.</p>
+        <h3>Besoin urgent ?</h3>
+        <p>Partiels, examens, rattrapage… On peut démarrer rapidement selon les disponibilités.</p>
         <div style="margin-top:12px">
-          <a class="btn blue" href="inscription.html">Démarrer maintenant</a>
+          <a class="btn" href="inscription.html">S’inscrire maintenant</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ======================
+     MATIÈRES
+     ====================== -->
 <section class="section" id="matieres" style="background:var(--soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
   <div class="container">
     <h2>Matières</h2>
@@ -192,10 +207,13 @@
   </div>
 </section>
 
+<!-- ======================
+     ÉQUIPE
+     ====================== -->
 <section class="section" id="equipe">
   <div class="container">
     <h2>L’équipe</h2>
-    <p>3 membres : Bilal, Sami, Walid. Ajoute vos photos dans <code>assets/</code> (noms ci-dessous).</p>
+    <p>3 membres : Bilal, Sami, Walid. Ajoutez vos photos dans <code>assets/</code> (noms ci-dessous).</p>
 
     <div class="team">
       <div class="card person">
@@ -208,9 +226,9 @@
           <span class="role">Co-fondateur</span>
         </div>
         <ul>
-          <li>Expérience : tutorat / cours privés</li>
-          <li>Public : secondaire + supérieur</li>
-          <li>Tél/WhatsApp : <b>+32 470 12 34 56</b> (à changer)</li>
+          <li>Secondaire + supérieur</li>
+          <li>Méthode + exercices ciblés</li>
+          <li>WhatsApp : <b>+32 470 12 34 56</b> (à changer)</li>
         </ul>
       </div>
 
@@ -224,9 +242,9 @@
           <span class="role">Co-fondateur</span>
         </div>
         <ul>
-          <li>Expérience : secondaire / cours privés</li>
-          <li>Objectif : méthode + exercices</li>
-          <li>Tél/WhatsApp : <b>+32 486 55 01 92</b> (à changer)</li>
+          <li>Secondaire + supérieur</li>
+          <li>Organisation + progression</li>
+          <li>WhatsApp : <b>+32 486 55 01 92</b> (à changer)</li>
         </ul>
       </div>
 
@@ -240,9 +258,9 @@
           <span class="role">Co-fondateur</span>
         </div>
         <ul>
-          <li>Expérience : supérieur / coaching</li>
-          <li>Focus : progression & confiance</li>
-          <li>Tél/WhatsApp : <b>+32 499 20 88 73</b> (à changer)</li>
+          <li>Secondaire + supérieur</li>
+          <li>Coaching & confiance</li>
+          <li>WhatsApp : <b>+32 499 20 88 73</b> (à changer)</li>
         </ul>
       </div>
     </div>
@@ -254,21 +272,24 @@
   </div>
 </section>
 
+<!-- ======================
+     FAQ
+     ====================== -->
 <section class="section" style="background:var(--soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
   <div class="container">
     <h2>FAQ</h2>
     <div class="grid-2 faq">
       <details>
-        <summary>Pourquoi pas de prix affiché pour les cours particuliers ?</summary>
-        <p>Parce que ça dépend du niveau, de la matière, du format (online/domicile/locaux) et de la fréquence. On propose un devis personnalisé après inscription.</p>
+        <summary>Pourquoi pas de prix affiché ?</summary>
+        <p>Le tarif dépend du niveau, de la matière, du format (online/domicile/locaux) et de la fréquence. On propose un devis personnalisé après inscription.</p>
       </details>
       <details>
         <summary>Où se déroulent les cours ?</summary>
-        <p>En ligne, à domicile, ou dans des locaux si disponibles. Les groupes se font actuellement via une collaboration avec La Source.</p>
+        <p>En ligne, à domicile, ou dans des locaux si disponibles. Tout se confirme après inscription selon vos préférences.</p>
       </details>
       <details>
         <summary>Vous faites le supérieur (univ/haute école) ?</summary>
-        <p>Oui. Indique la matière + programme dans l’inscription : on s’organise et on délègue si besoin.</p>
+        <p>Oui. Indique la matière + le programme dans l’inscription : on s’organise et on délègue si besoin.</p>
       </details>
       <details>
         <summary>Combien de temps pour être recontacté ?</summary>
@@ -281,11 +302,10 @@
 <footer>
   <div class="container footer-grid">
     <div>
-      <strong style="color:var(--sbs-blue)">BCWbruxelles</strong>
+      <strong style="color:var(--blue)">BCWbruxelles</strong>
       <div class="small">Soutien scolaire — secondaire & supérieur</div>
       <div class="small" style="margin-top:6px;">
-        <!-- ⚠️ Si vous gardez le logo SBS : précisez que vous n’êtes pas affiliés officiellement -->
-        Diplômés Solvay Brussels School (mention alumni)
+        Diplômés Solvay Brussels School (alumni)
       </div>
     </div>
 
@@ -296,10 +316,11 @@
   </div>
 </footer>
 
-<!-- Bouton WhatsApp flottant (remplace le numéro) -->
-<a class="float-wa" href="https://wa.me/32470123456" target="_blank" rel="noopener">
-  <span class="dot"></span> WhatsApp
-</a>
+<!-- ✅ CTA mobile (visible seulement sur téléphone) -->
+<div class="mobile-cta">
+  <a class="btn" href="inscription.html">S’inscrire</a>
+  <a class="btn secondary" href="contact.html">Contact</a>
+</div>
 
 <script src="script.js"></script>
 </body>

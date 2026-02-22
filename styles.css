@@ -1,21 +1,30 @@
-:root{
-  /* Couleurs extraites du logo SBS fourni */
-  --sbs-orange:#FF9D19;
-  --sbs-blue:#015199;
+/* =========================
+   BCWbruxelles — styles.css
+   Objectif : simple, moderne, couleurs orange/bleu (rappel Solvay)
+   ========================= */
 
+:root{
+  /* Couleurs (proches du style Solvay Brussels School) */
+  --orange:#FF9D19;
+  --blue:#015199;
+
+  /* Neutres */
   --ink:#0b1220;
   --muted:#556277;
   --bg:#ffffff;
   --soft:#f5f7fb;
   --card:#ffffff;
+
   --border:rgba(10,20,35,.10);
   --shadow:0 14px 35px rgba(10,20,35,.10);
   --radius:22px;
   --max:1120px;
 
-  --grad: radial-gradient(900px 500px at 15% -10%, rgba(1,81,153,.18), transparent 60%),
-          radial-gradient(900px 500px at 85% 0%, rgba(255,157,25,.28), transparent 55%),
-          linear-gradient(180deg, #fff, #f6f8ff);
+  /* Dégradé de fond pour le hero */
+  --grad:
+    radial-gradient(900px 500px at 15% -10%, rgba(1,81,153,.18), transparent 60%),
+    radial-gradient(900px 500px at 85% 0%, rgba(255,157,25,.28), transparent 55%),
+    linear-gradient(180deg, #fff, #f6f8ff);
 }
 
 *{box-sizing:border-box}
@@ -29,13 +38,15 @@ body{
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .container{max-width:var(--max);margin:0 auto;padding:0 18px}
-
 ::selection{background:rgba(255,157,25,.35)}
 
+/* =========================
+   Boutons
+   ========================= */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:10px;
   border:1px solid transparent;
-  background:var(--sbs-orange);
+  background:var(--orange);
   color:#111;
   padding:12px 16px;
   border-radius:999px;
@@ -48,26 +59,45 @@ img{max-width:100%;display:block}
 .btn.secondary{
   background:#fff;
   border-color:rgba(1,81,153,.25);
-  color:var(--sbs-blue);
+  color:var(--blue);
   box-shadow:none;
 }
 .btn.blue{
-  background:var(--sbs-blue);
+  background:var(--blue);
   color:#fff;
   box-shadow:0 10px 22px rgba(1,81,153,.22);
 }
 
+/* Petites “pill” (labels) */
 .pill{
   display:inline-flex;align-items:center;gap:10px;
   padding:7px 12px;border-radius:999px;
   border:1px solid var(--border);
   background:rgba(1,81,153,.06);
-  color:var(--sbs-blue);
+  color:var(--blue);
   font-weight:800;
   font-size:13px;
 }
-.pill.orange{background:rgba(255,157,25,.12);color:#7a3b00;border-color:rgba(255,157,25,.25)}
+.pill.orange{
+  background:rgba(255,157,25,.12);
+  color:#7a3b00;
+  border-color:rgba(255,157,25,.25)
+}
 
+/* Tags (petits badges) */
+.tag{
+  display:inline-flex;align-items:center;
+  padding:6px 10px;border-radius:999px;
+  background:rgba(0,0,0,.03);
+  border:1px solid var(--border);
+  font-weight:800;font-size:12px;color:rgba(11,18,32,.75);
+}
+.tag.blue{background:rgba(1,81,153,.08);color:var(--blue);border-color:rgba(1,81,153,.20)}
+.tag.orange{background:rgba(255,157,25,.14);color:#7a3b00;border-color:rgba(255,157,25,.28)}
+
+/* =========================
+   Header / Navbar
+   ========================= */
 header{
   position:sticky;top:0;z-index:50;
   background:rgba(255,255,255,.82);
@@ -79,17 +109,34 @@ header{
   padding:14px 0;
   gap:14px;
 }
-.brand{display:flex;align-items:center;gap:12px;min-width:240px}
+
+/* Brand = logo + nom */
+.brand{
+  display:flex;align-items:center;gap:12px;
+  min-width:260px;
+}
+
+/* ✅ LOGO PLUS VISIBLE DANS LA BARRE DU HAUT */
 .brand-logo{
-  width:44px;height:44px;border-radius:16px;
+  width:56px;                 /* avant c'était ~44px */
+  height:56px;
+  border-radius:18px;
   border:1px solid var(--border);
   background:var(--soft);
   display:grid;place-items:center;
   overflow:hidden;
 }
-.brand-logo img{width:100%;height:100%;object-fit:contain}
+
+/* On force le logo à bien “rentrer” dans la boîte */
+.brand-logo img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:6px;                /* petit padding = plus propre si logo collé aux bords */
+}
+
 .brand-title{display:flex;flex-direction:column;line-height:1.1}
-.brand-title strong{color:var(--sbs-blue);font-size:16px}
+.brand-title strong{color:var(--blue);font-size:16px}
 .brand-title span{color:var(--muted);font-size:12px;font-weight:700}
 
 nav{position:relative}
@@ -101,8 +148,9 @@ nav a.link{
   padding:10px 12px;border-radius:14px;
 }
 nav a.link:hover{background:rgba(0,0,0,.04)}
-nav a.link.active{color:var(--sbs-blue);background:rgba(1,81,153,.08)}
+nav a.link.active{color:var(--blue);background:rgba(1,81,153,.08)}
 
+/* Menu burger mobile */
 .burger{
   display:none;
   border:1px solid var(--border);
@@ -111,13 +159,16 @@ nav a.link.active{color:var(--sbs-blue);background:rgba(1,81,153,.08)}
 }
 .burger span{display:block;width:20px;height:2px;background:var(--ink);margin:4px 0}
 
+/* =========================
+   HERO (partie haute)
+   ========================= */
 .hero{
   background:var(--grad);
   border-bottom:1px solid var(--border);
 }
 .hero-wrap{
   display:grid;
-  grid-template-columns: 1.25fr .95fr;
+  grid-template-columns: 1.2fr .95fr;
   gap:22px;
   padding:46px 0 28px;
   align-items:center;
@@ -129,6 +180,44 @@ nav a.link.active{color:var(--sbs-blue);background:rgba(1,81,153,.08)}
 .lead{font-size:18px;color:var(--muted);margin:0 0 18px}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
 
+/* ✅ LOGO MIS EN ÉVIDENCE DANS LE HERO */
+.hero-mark{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin:10px 0 6px;
+}
+.hero-mark .hero-logo{
+  width:84px;                 /* gros logo dans le hero */
+  height:84px;
+  border-radius:22px;
+  border:1px solid var(--border);
+  background:#fff;
+  box-shadow:0 12px 24px rgba(10,20,35,.08);
+  overflow:hidden;
+  display:grid;place-items:center;
+}
+.hero-mark .hero-logo img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:10px;
+}
+.hero-mark .hero-brand{
+  display:flex;
+  flex-direction:column;
+  line-height:1.1;
+}
+.hero-mark .hero-brand strong{
+  font-size:18px;
+  color:var(--blue);
+}
+.hero-mark .hero-brand span{
+  font-size:13px;
+  color:var(--muted);
+  font-weight:800;
+}
+
 .hero-card{
   background:rgba(255,255,255,.85);
   border:1px solid var(--border);
@@ -136,6 +225,8 @@ nav a.link.active{color:var(--sbs-blue);background:rgba(1,81,153,.08)}
   padding:18px;
   box-shadow:var(--shadow);
 }
+
+/* Petits “kpis” */
 .kpis{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
 .kpi{
   border:1px solid var(--border);
@@ -143,14 +234,17 @@ nav a.link.active{color:var(--sbs-blue);background:rgba(1,81,153,.08)}
   padding:12px;
   background:#fff;
 }
-.kpi strong{display:block;color:var(--sbs-blue);font-size:18px}
+.kpi strong{display:block;color:var(--blue);font-size:18px}
 .kpi span{color:var(--muted);font-weight:700;font-size:13px}
 
+/* =========================
+   Sections & cartes
+   ========================= */
 .section{padding:46px 0}
 .section h2{
   margin:0 0 10px;
   font-size:30px;
-  color:var(--sbs-blue);
+  color:var(--blue);
   letter-spacing:-.01em;
 }
 .section p{color:var(--muted);margin:0 0 16px}
@@ -170,40 +264,24 @@ nav a.link.active{color:var(--sbs-blue);background:rgba(1,81,153,.08)}
 .card h3{margin:0 0 8px;font-size:18px}
 .card p{margin:0;color:var(--muted)}
 .meta{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
-.tag{
-  display:inline-flex;align-items:center;
-  padding:6px 10px;border-radius:999px;
-  background:rgba(0,0,0,.03);
-  border:1px solid var(--border);
-  font-weight:800;font-size:12px;color:rgba(11,18,32,.75);
-}
-.tag.blue{background:rgba(1,81,153,.08);color:var(--sbs-blue);border-color:rgba(1,81,153,.20)}
-.tag.orange{background:rgba(255,157,25,.14);color:#7a3b00;border-color:rgba(255,157,25,.28)}
 
 .highlight{
   border:1px solid rgba(255,157,25,.28);
   background:linear-gradient(180deg, rgba(255,157,25,.10), rgba(1,81,153,.05));
 }
-.price{display:flex;align-items:baseline;gap:10px;margin-top:10px}
-.price strong{font-size:26px;color:var(--sbs-blue)}
-.price span{color:var(--muted);font-weight:800}
 
+/* Mise en page 50/50 */
 .split{display:grid;grid-template-columns: 1fr 1fr;gap:16px;align-items:start}
 
-.callout{
-  border-left:6px solid var(--sbs-orange);
-  padding:14px 16px;
-  border-radius:16px;
-  background:#fff;
-  border:1px solid var(--border);
-}
-
+/* =========================
+   Team
+   ========================= */
 .team{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
 }
-.person{
-  display:flex;flex-direction:column;gap:12px;
-}
+.person{display:flex;flex-direction:column;gap:12px}
 .avatar{
   width:100%;
   aspect-ratio: 4 / 3;
@@ -216,9 +294,17 @@ nav a.link.active{color:var(--sbs-blue);background:rgba(1,81,153,.08)}
 .avatar img{width:100%;height:100%;object-fit:cover}
 .person .name{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .person .name strong{font-size:18px}
-.person .name .role{font-size:12px;font-weight:900;color:var(--sbs-blue);background:rgba(1,81,153,.08);padding:6px 10px;border-radius:999px;border:1px solid rgba(1,81,153,.18)}
+.person .name .role{
+  font-size:12px;font-weight:900;color:var(--blue);
+  background:rgba(1,81,153,.08);
+  padding:6px 10px;border-radius:999px;
+  border:1px solid rgba(1,81,153,.18)
+}
 .person ul{margin:0;padding-left:18px;color:var(--muted);font-weight:700}
 
+/* =========================
+   FAQ
+   ========================= */
 .faq details{
   border:1px solid var(--border);
   border-radius:18px;
@@ -228,6 +314,9 @@ nav a.link.active{color:var(--sbs-blue);background:rgba(1,81,153,.08)}
 .faq summary{cursor:pointer;font-weight:900}
 .faq p{margin:10px 0 0;color:var(--muted);font-weight:700}
 
+/* =========================
+   Form wrapper (page inscription)
+   ========================= */
 .form-wrap{
   max-width:860px;
   margin:0 auto;
@@ -238,20 +327,9 @@ nav a.link.active{color:var(--sbs-blue);background:rgba(1,81,153,.08)}
   box-shadow:var(--shadow);
 }
 
-.contact-row{
-  display:flex;gap:10px;flex-wrap:wrap;margin-top:12px
-}
-.icon-btn{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:10px 12px;border-radius:14px;
-  border:1px solid var(--border);
-  background:#fff;
-  font-weight:900;
-}
-.icon{
-  width:18px;height:18px;display:inline-block
-}
-
+/* =========================
+   Footer
+   ========================= */
 footer{
   padding:26px 0;
   border-top:1px solid var(--border);
@@ -262,29 +340,31 @@ footer{
 }
 .small{font-size:13px;color:var(--muted);font-weight:700}
 
-.float-wa{
-  position:fixed;right:18px;bottom:18px;z-index:60;
-  display:inline-flex;align-items:center;gap:10px;
-  padding:12px 14px;border-radius:999px;
-  border:1px solid rgba(1,81,153,.18);
-  background:#fff;
-  box-shadow:0 16px 34px rgba(10,20,35,.14);
-  font-weight:900;color:var(--sbs-blue);
-}
-.float-wa:hover{transform:translateY(-1px)}
-.float-wa .dot{
-  width:10px;height:10px;border-radius:99px;
-  background:var(--sbs-orange);
-  box-shadow:0 0 0 6px rgba(255,157,25,.18);
+/* =========================
+   ✅ CTA mobile (barre en bas)
+   ========================= */
+.mobile-cta{display:none}
+@media (max-width: 980px){
+  .mobile-cta{
+    display:flex;
+    position:fixed;
+    left:14px; right:14px; bottom:14px;
+    gap:10px;
+    z-index:999;
+  }
+  .mobile-cta a{flex:1}
 }
 
-/* Responsive */
+/* =========================
+   Responsive
+   ========================= */
 @media (max-width: 980px){
   .hero-wrap{grid-template-columns:1fr}
   .h1{font-size:40px}
   .grid-3{grid-template-columns:1fr}
   .grid-2{grid-template-columns:1fr}
   .team{grid-template-columns:1fr}
+
   nav ul{display:none}
   .burger{display:inline-block}
   nav.open ul{

@@ -3,8 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Contact — BCWbruxelles</title>
   <meta name="description" content="Contact BCWbruxelles : email, WhatsApp, Instagram." />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#FF9D19">
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -13,8 +20,7 @@
   <div class="container navbar">
     <a class="brand" href="index.html">
       <div class="brand-logo">
-        <img src="assets/logo-bcw.png" alt="Logo BCWbruxelles"
-             onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;pill orange&quot;>BCW</span>';">
+        <img src="assets/logo-bcw.png" alt="Logo BCWbruxelles">
       </div>
       <div class="brand-title">
         <strong>BCWbruxelles</strong>
@@ -40,42 +46,34 @@
 <section class="section">
   <div class="container">
     <h2>Nous contacter</h2>
-    <p>Tu peux aussi passer par <a href="inscription.html" style="color:var(--sbs-blue);font-weight:900">l’inscription</a> (le plus simple). Sinon :</p>
+    <p>Le plus simple : passe par <a href="inscription.html" style="color:var(--blue);font-weight:900">l’inscription</a>. Sinon :</p>
 
     <div class="grid-2">
       <div class="card">
         <h3>Email</h3>
+        <!-- Remplace par votre email -->
         <p><b>contact@bcwbruxelles.be</b> (à remplacer)</p>
-
-        <div class="contact-row">
-          <a class="icon-btn" href="mailto:contact@bcwbruxelles.be">
-            <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4V6Z" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="2"/></svg>
-            Envoyer un email
-          </a>
+        <div class="meta">
+          <span class="tag blue">Réponse rapide</span>
         </div>
       </div>
 
       <div class="card">
         <h3>WhatsApp</h3>
+        <!-- Remplace par votre numéro -->
         <p><b>+32 470 12 34 56</b> (à remplacer)</p>
-
-        <div class="contact-row">
-          <a class="icon-btn" href="https://wa.me/32470123456" target="_blank" rel="noopener">
-            <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M20 12a8 8 0 0 1-12.6 6.6L4 20l1.5-3.2A8 8 0 1 1 20 12Z" stroke="currentColor" stroke-width="2"/></svg>
-            Ouvrir WhatsApp
-          </a>
+        <div class="meta">
+          <span class="tag orange">WhatsApp</span>
         </div>
       </div>
     </div>
 
     <div class="card" style="margin-top:16px;">
       <h3>Instagram</h3>
+      <!-- Remplace par votre @ -->
       <p><b>@bcwbruxelles</b> (à remplacer)</p>
-      <div class="contact-row">
-        <a class="icon-btn" href="https://instagram.com/bcwbruxelles" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Z" stroke="currentColor" stroke-width="2"/><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="2"/><path d="M17.5 6.5h.01" stroke="currentColor" stroke-width="3"/></svg>
-          Voir Instagram
-        </a>
+      <div class="meta">
+        <span class="tag">Réseaux</span>
       </div>
     </div>
 
@@ -85,7 +83,7 @@
 <footer>
   <div class="container footer-grid">
     <div>
-      <strong style="color:var(--sbs-blue)">BCWbruxelles</strong>
+      <strong style="color:var(--blue)">BCWbruxelles</strong>
       <div class="small">Secondaire • Université • Haute école</div>
     </div>
     <div class="small">
@@ -94,6 +92,12 @@
     </div>
   </div>
 </footer>
+
+<!-- ✅ CTA mobile -->
+<div class="mobile-cta">
+  <a class="btn" href="inscription.html">S’inscrire</a>
+  <a class="btn secondary" href="contact.html">Contact</a>
+</div>
 
 <script src="script.js"></script>
 </body>

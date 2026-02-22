@@ -3,8 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Inscription — BCWbruxelles</title>
-  <meta name="description" content="Inscription BCWbruxelles : secondaire & supérieur. Cours particuliers, aide aux devoirs, groupes." />
+  <meta name="description" content="Inscription BCWbruxelles : secondaire & supérieur. Demande de devis." />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#FF9D19">
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -13,8 +20,7 @@
   <div class="container navbar">
     <a class="brand" href="index.html">
       <div class="brand-logo">
-        <img src="assets/logo-bcw.png" alt="Logo BCWbruxelles"
-             onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;pill orange&quot;>BCW</span>';">
+        <img src="assets/logo-bcw.png" alt="Logo BCWbruxelles">
       </div>
       <div class="brand-title">
         <strong>BCWbruxelles</strong>
@@ -42,35 +48,29 @@
     <h2>Inscription / Demande de devis</h2>
     <p>Remplis le formulaire (2 minutes). On te recontacte pour confirmer le format + l’horaire et proposer un devis si nécessaire.</p>
 
+    <!-- ✅ Le formulaire Tally est intégré dans VOTRE site via iframe -->
     <div class="form-wrap">
-      <!-- ✅ TALLY (recommandé) : remplace XXXXXX -->
-      <!--
       <iframe
-        data-tally-src="https://tally.so/r/XXXXXX"
+        data-tally-src="https://tally.so/r/XxDv7e"
         loading="lazy"
         width="100%"
-        height="720"
+        height="820"
         frameborder="0"
         marginheight="0"
         marginwidth="0"
         title="Inscription BCWbruxelles">
       </iframe>
+
+      <!-- Script officiel Tally pour charger l'iframe correctement -->
       <script>
-        var d=document, w="https://tally.so/widgets/embed.js";
-        var s=d.createElement("script"); s.src=w; s.async=true;
+        var d = document, w = "https://tally.so/widgets/embed.js";
+        var s = d.createElement("script"); s.src = w; s.async = true;
         d.body.appendChild(s);
       </script>
-      -->
-
-      <!-- ✅ Sinon : colle ici l'iframe Google Forms -->
-      <div class="callout">
-        <strong>À faire :</strong> colle ici ton embed <b>Tally</b> ou <b>Google Forms</b>.<br>
-        Ajoute dans ton formulaire : niveau, matière, disponibilités, format (online/domicile), RGPD.
-      </div>
     </div>
 
     <p class="small" style="margin-top:12px;">
-      En envoyant ce formulaire, vous acceptez d’être recontacté par BCWbruxelles. (Pense à ajouter une case RGPD dans le formulaire.)
+      En envoyant ce formulaire, vous acceptez d’être recontacté par BCWbruxelles.
     </p>
   </div>
 </section>
@@ -78,7 +78,7 @@
 <footer>
   <div class="container footer-grid">
     <div>
-      <strong style="color:var(--sbs-blue)">BCWbruxelles</strong>
+      <strong style="color:var(--blue)">BCWbruxelles</strong>
       <div class="small">Secondaire • Université • Haute école</div>
     </div>
     <div class="small">
@@ -87,6 +87,12 @@
     </div>
   </div>
 </footer>
+
+<!-- ✅ CTA mobile -->
+<div class="mobile-cta">
+  <a class="btn" href="inscription.html">S’inscrire</a>
+  <a class="btn secondary" href="contact.html">Contact</a>
+</div>
 
 <script src="script.js"></script>
 </body>
