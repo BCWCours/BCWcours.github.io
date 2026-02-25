@@ -3,355 +3,340 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>BCWbruxelles — Soutien scolaire (secondaire & supérieur)</title>
-  <meta name="description" content="BCWbruxelles : cours particuliers, aide aux devoirs, préparation examens. Secondaire + supérieur (université & haute école). En ligne, à domicile ou en locaux." />
-
-  <!-- ✅ Favicon : enlève le “G” et met votre logo dans l’onglet -->
-  <!-- Tu vas ajouter ces fichiers dans assets/ -->
-  <link rel="icon" href="assets/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <meta name="theme-color" content="#FF9D19">
-
+  <title>BCW Bruxelles - Cours particuliers secondaire &amp; enseignement supérieur</title>
+  <meta name="description" content="BCW Bruxelles propose des cours particuliers a Bruxelles, en ligne et a domicile pour le secondaire et l'enseignement superieur." />
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+  <meta name="theme-color" content="#0B2B53" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-<header>
-  <div class="container navbar">
-    <!-- ======================
-         BRAND (logo + nom)
-         ====================== -->
-    <a class="brand" href="index.html">
-      <div class="brand-logo" aria-label="Logo BCWbruxelles">
-        <!-- IMPORTANT : le nom du fichier doit être exactement assets/logo-bcw.png -->
-        <img src="assets/logo-bcw.png" alt="Logo BCWbruxelles"
-             onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;pill orange&quot;>BCW</span>';">
-      </div>
-      <div class="brand-title">
-        <strong>BCWbruxelles</strong>
-        <span>Secondaire • Université • Haute école</span>
-      </div>
-    </a>
-
-    <!-- ======================
-         NAVIGATION
-         ====================== -->
-    <nav>
-      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <ul>
-        <li><a class="link" href="#offres">Offres</a></li>
-        <li><a class="link" href="#matieres">Matières</a></li>
-        <li><a class="link" href="#equipe">Équipe</a></li>
-        <li><a class="link" href="contact.html">Contact</a></li>
-        <li><a class="btn" href="inscription.html">S’inscrire</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<!-- ======================
-     HERO
-     ====================== -->
-<section class="hero">
-  <div class="container hero-wrap">
-    <div>
-      <!-- ✅ Bandeau court (pro, clair) -->
-      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
-        <span class="pill">Bruxelles • En ligne • Présentiel</span>
-        <span class="pill orange">Réponse rapide</span>
-      </div>
-
-      <!-- ✅ Logo mis en évidence + baseline courte -->
-      <div class="hero-mark">
-        <div class="hero-logo">
-          <img src="assets/logo-bcw.png" alt="Logo BCWbruxelles">
+  <header>
+    <div class="container navbar">
+      <a class="brand" href="index.html" aria-label="BCW Bruxelles accueil">
+        <div class="brand-logo" aria-hidden="true">
+          <img src="assets/logo-bcw.png" alt="Logo BCW Bruxelles" />
         </div>
-        <div class="hero-brand">
-          <strong>BCWbruxelles</strong>
-          <span>Diplômés Solvay Brussels School (alumni)</span>
+        <div class="brand-title">
+          <strong>BCW Bruxelles</strong>
+          <span data-i18n="brand.tagline">Secondaire - Enseignement superieur</span>
         </div>
-      </div>
+      </a>
 
-      <!-- ✅ Titre plus “premium” -->
-      <h1 class="h1">Soutien scolaire exigeant et bienveillant.</h1>
-
-      <!-- ✅ Texte plus pro (sans “univ/haute école”) -->
-      <p class="lead">
-        Nous accompagnons les élèves du <b>secondaire</b> et les étudiants du <b>supérieur</b>
-        pour gagner en compréhension, en méthode et en résultats — devoirs, examens, rattrapage.
-      </p>
-
-      <!-- ✅ CTA -->
-      <div class="hero-actions">
-        <a class="btn" href="inscription.html">S’inscrire / Demander un devis</a>
-        <a class="btn secondary" href="#offres">Voir les offres</a>
-      </div>
-
-      <!-- ✅ KPIs : on garde Secondaire + Supérieur
-           et on remplace "Formats" / "Suivi" par des messages moins ambigus -->
-      <div class="kpis">
-        <div class="kpi">
-          <strong>Secondaire</strong>
-          <span>Devoirs • examens • méthode</span>
-        </div>
-
-        <div class="kpi">
-          <strong>Supérieur</strong>
-          <span>Cours • travaux • examens</span>
-        </div>
-
-        <div class="kpi">
-          <strong>Sur mesure</strong>
-          <span>Devis adapté à votre besoin</span>
-        </div>
-
-        <div class="kpi">
-          <strong>Progression</strong>
-          <span>Exercices ciblés + plan clair</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- ✅ Carte à droite : plus concise, plus “marketing pro” -->
-    <div class="hero-card">
-      <h3 style="margin:0">Notre méthode (simple & efficace)</h3>
-
-      <p style="margin:10px 0 0;color:var(--muted);font-weight:700">
-        3 étapes : diagnostic rapide → séances ciblées → plan de progression.
-      </p>
-
-      <!-- ✅ Liste courte (plus lisible que paragraphe long) -->
-      <ul style="margin:12px 0 0; padding-left:18px; color:var(--muted); font-weight:700;">
-        <li>On identifie précisément ce qui bloque</li>
-        <li>On travaille avec des exercices “type examen”</li>
-        <li>On repart avec des priorités claires</li>
-      </ul>
-
-      <div class="meta" style="margin-top:14px;">
-        <span class="tag orange">Objectif examen</span>
-        <span class="tag blue">Méthode</span>
-        <span class="tag">Rattrapage</span>
-        <span class="tag">Confiance</span>
-      </div>
-
-      <div style="margin-top:14px;">
-        <a class="btn blue" href="inscription.html">Faire une demande</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ======================
-     OFFRES (✅ 2 OFFRES, SANS PRIX, SANS “LA SOURCE”)
-     ====================== -->
-<section class="section" id="offres">
-  <div class="container">
-    <h2>Offres</h2>
-    <p>
-      On propose un accompagnement adapté à votre besoin. Le tarif varie selon le niveau, la matière, le format et la fréquence,
-      donc on propose un <b>devis personnalisé</b> après inscription.
-    </p>
-
-    <!-- ✅ 2 cartes seulement -->
-    <div class="grid-2">
-      <div class="card highlight">
-        <h3>Cours particuliers (sur mesure)</h3>
-        <p>Accompagnement 1-to-1 ou petit groupe privé, adapté à l’objectif (rattrapage, examen, méthode…).</p>
-        <div class="meta">
-          <span class="tag blue">Devis personnalisé</span>
-          <span class="tag">En ligne / domicile</span>
-          <span class="tag orange">Préparation examen</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>Aide aux devoirs & méthodologie</h3>
-        <p>Organisation, régularité, compréhension, plan de travail. Idéal pour reprendre confiance et progresser.</p>
-        <div class="meta">
-          <span class="tag">Secondaire</span>
-          <span class="tag orange">Plan de travail</span>
-          <span class="tag blue">Suivi</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="split" style="margin-top:16px;">
-      <div class="card">
-        <h3>Comment ça marche ?</h3>
-        <p style="font-weight:750;color:var(--muted)">
-          1) Inscription (2 minutes)<br>
-          2) On vous contacte (objectif + dispo)<br>
-          3) On propose format + devis<br>
-          4) Démarrage + suivi
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Besoin urgent ?</h3>
-        <p>Partiels, examens, rattrapage… On peut démarrer rapidement selon les disponibilités.</p>
-        <div style="margin-top:12px">
-          <a class="btn" href="inscription.html">S’inscrire maintenant</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ======================
-     MATIÈRES
-     ====================== -->
-<section class="section" id="matieres" style="background:var(--soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-  <div class="container">
-    <h2>Matières</h2>
-    <p>
-      On peut aider sur <b>tout</b> (et déléguer si la demande augmente).
-      Indique la matière et le niveau dans l’inscription.
-    </p>
-
-    <div class="grid-3">
-      <div class="card">
-        <h3>Secondaire</h3>
-        <p>Math • Sciences • Français • Langues • Histoire • Géographie • Méthode</p>
-        <div class="meta">
-          <span class="tag">Devoirs</span><span class="tag orange">Examens</span><span class="tag">Rattrapage</span>
-        </div>
-      </div>
-      <div class="card">
-        <h3>Supérieur</h3>
-        <p>Stats • Éco • Finance • Comptabilité • Maths • Méthodo (selon cursus)</p>
-        <div class="meta">
-          <span class="tag blue">Univ</span><span class="tag blue">Haute école</span><span class="tag">Partiels</span>
-        </div>
-      </div>
-      <div class="card">
-        <h3>Organisation & méthode</h3>
-        <p>Planification • Fiches • Exercices types • Gestion du temps • Confiance</p>
-        <div class="meta">
-          <span class="tag orange">Méthodo</span><span class="tag">Suivi</span><span class="tag">Objectifs</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ======================
-     ÉQUIPE
-     ====================== -->
-<section class="section" id="equipe">
-  <div class="container">
-    <h2>L’équipe</h2>
-    <p>3 membres : Bilal, Sami, Walid. Ajoutez vos photos dans <code>assets/</code> (noms ci-dessous).</p>
-
-    <div class="team">
-      <div class="card person">
-        <div class="avatar">
-          <img src="assets/team-bilal.jpg" alt="Bilal"
-               onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;pill&quot;>Photo Bilal</span>';">
-        </div>
-        <div class="name">
-          <strong>Bilal</strong>
-          <span class="role">Co-fondateur</span>
-        </div>
+      <nav>
+        <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         <ul>
-          <li>Secondaire + supérieur</li>
-          <li>Méthode + exercices ciblés</li>
-          <li>WhatsApp : <b>+32 470 12 34 56</b> (à changer)</li>
+          <li><a class="link" href="#offre" data-i18n="nav.offer">Offre</a></li>
+          <li><a class="link" href="#matieres" data-i18n="nav.subjects">Matieres</a></li>
+          <li><a class="link" href="#methode" data-i18n="nav.method">Methode</a></li>
+          <li><a class="link" href="#faq" data-i18n="nav.faq">FAQ</a></li>
+          <li><a class="link" href="contact.html" data-i18n="nav.contactPage">Page contact</a></li>
+          <li><a class="btn btn-nav" href="inscription.html" data-i18n="nav.register">S'inscrire</a></li>
+          <li>
+            <div class="lang-toggle" role="group" aria-label="Choix de langue">
+              <button class="lang-btn is-active" type="button" data-lang="fr">FR</button>
+              <button class="lang-btn" type="button" data-lang="nl">NL</button>
+            </div>
+          </li>
         </ul>
-      </div>
+      </nav>
+    </div>
+  </header>
 
-      <div class="card person">
-        <div class="avatar">
-          <img src="assets/team-sami.jpg" alt="Sami"
-               onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;pill&quot;>Photo Sami</span>';">
+  <main>
+    <section class="hero" id="top">
+      <div class="container hero-wrap">
+        <div class="hero-content">
+          <div class="hero-pills">
+            <span class="pill" data-i18n="hero.pillFormats">Bruxelles - En ligne - A domicile</span>
+            <span class="pill pill-alert" data-i18n="hero.pillFast">Reponse rapide</span>
+          </div>
+
+          <h1 data-i18n="hero.title">Cours particuliers exigeants pour progresser durablement.</h1>
+          <p class="hero-subtitle" data-i18n="hero.subtitle">
+            BCW accompagne les eleves du secondaire et les etudiants de l'enseignement superieur a Bruxelles,
+            en ligne et a domicile, avec un suivi rigoureux et humain.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn" href="#contact" data-i18n="hero.ctaPrimary">Demander un cours</a>
+            <a class="btn btn-secondary" href="tel:xxx" data-i18n="hero.ctaSecondary">Appeler</a>
+          </div>
         </div>
-        <div class="name">
-          <strong>Sami</strong>
-          <span class="role">Co-fondateur</span>
-        </div>
-        <ul>
-          <li>Secondaire + supérieur</li>
-          <li>Organisation + progression</li>
-          <li>WhatsApp : <b>+32 486 55 01 92</b> (à changer)</li>
-        </ul>
       </div>
+    </section>
 
-      <div class="card person">
-        <div class="avatar">
-          <img src="assets/team-walid.jpg" alt="Walid"
-               onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;pill&quot;>Photo Walid</span>';">
+    <section class="section" id="confiance">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="trust.title">Pourquoi les familles nous font confiance</h2>
+          <p class="section-intro" data-i18n="trust.subtitle">Une equipe de 3 diplomes Solvay Brussels School, un cadre clair et un accompagnement constant.</p>
         </div>
-        <div class="name">
-          <strong>Walid</strong>
-          <span class="role">Co-fondateur</span>
+
+        <div class="grid-4">
+          <article class="card">
+            <h3 data-i18n="trust.card1.title">Equipe experimentee</h3>
+            <p data-i18n="trust.card1.text">Cours assures par des profils academiques solides, habitues aux objectifs d'examen.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="trust.card2.title">Cadre sur mesure</h3>
+            <p data-i18n="trust.card2.text">Chaque eleve suit un plan adapte au niveau, au rythme et aux priorites.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="trust.card3.title">Communication rapide</h3>
+            <p data-i18n="trust.card3.text">Retour sous 24h ouvrables pour organiser le format, la matiere et le planning.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="trust.card4.title">Resultats mesurables</h3>
+            <p data-i18n="trust.card4.text">Objectifs fixes en amont, progression suivie apres chaque seance.</p>
+          </article>
         </div>
-        <ul>
-          <li>Secondaire + supérieur</li>
-          <li>Coaching & confiance</li>
-          <li>WhatsApp : <b>+32 499 20 88 73</b> (à changer)</li>
-        </ul>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="offre">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="offer.title">Notre offre d'accompagnement</h2>
+          <p class="section-intro" data-i18n="offer.subtitle">Pas de prix affiche: nous preparons un devis personnalise selon niveau, matiere et format.</p>
+        </div>
+
+        <div class="grid-2">
+          <article class="offer-card">
+            <h3 data-i18n="offer.secondary.title">Secondaire</h3>
+            <p data-i18n="offer.secondary.text">Consolidation des bases, preparation d'examens, remediations ciblees et methode de travail.</p>
+            <ul class="feature-list">
+              <li data-i18n="offer.secondary.point1">Mathematiques, sciences, langues et plus</li>
+              <li data-i18n="offer.secondary.point2">Suivi continu avec objectifs hebdomadaires</li>
+              <li data-i18n="offer.secondary.point3">Format individuel ou mini-groupe</li>
+            </ul>
+          </article>
+
+          <article class="offer-card offer-card-highlight">
+            <h3 data-i18n="offer.higher.title">Enseignement superieur</h3>
+            <p data-i18n="offer.higher.text">Appui methodologique et academique pour valider les cours exigeants et preparer les evaluations.</p>
+            <ul class="feature-list">
+              <li data-i18n="offer.higher.point1">Finance, comptabilite, statistiques, langues</li>
+              <li data-i18n="offer.higher.point2">Preparation de travaux et examens</li>
+              <li data-i18n="offer.higher.point3">Approche structuree orientee performance</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="formats">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="formats.title">Formats</h2>
+          <p class="section-intro" data-i18n="formats.subtitle">Trois modalites simples pour s'adapter au planning de chaque famille.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card format-card">
+            <h3 data-i18n="formats.card1.title">En ligne</h3>
+            <p data-i18n="formats.card1.text">Cours interactifs avec partage d'ecran, supports et exercices en direct.</p>
+          </article>
+          <article class="card format-card">
+            <h3 data-i18n="formats.card2.title">A domicile</h3>
+            <p data-i18n="formats.card2.text">Accompagnement dans un cadre familier, avec suivi personnalise.</p>
+          </article>
+          <article class="card format-card">
+            <h3 data-i18n="formats.card3.title">Bruxelles</h3>
+            <p data-i18n="formats.card3.text">Sessions presencielles en ville selon disponibilites et localisation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="matieres">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="subjects.title">Matieres couvertes</h2>
+          <p class="section-intro" data-i18n="subjects.subtitle">Nous couvrons les matieres principales du secondaire et de l'enseignement superieur.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3 data-i18n="subjects.card1.title">Mathematiques &amp; sciences</h3>
+            <p data-i18n="subjects.card1.text">Maths, physique, chimie, statistiques et raisonnement scientifique.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="subjects.card2.title">Langues &amp; communication</h3>
+            <p data-i18n="subjects.card2.text">Francais, neerlandais, anglais, methodologie redactionnelle et orale.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="subjects.card3.title">Finance &amp; comptabilite</h3>
+            <p data-i18n="subjects.card3.text">Principes comptables, analyse financiere, exercices et cas pratiques.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="methode">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="method.title">Methode &amp; suivi</h2>
+          <p class="section-intro" data-i18n="method.subtitle">Un processus clair en 3 etapes, identique pour tous les formats.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card method-card">
+            <h3 data-i18n="method.card1.title">1. Diagnostic</h3>
+            <p data-i18n="method.card1.text">Evaluation rapide des acquis, blocages et priorites academiques.</p>
+          </article>
+          <article class="card method-card">
+            <h3 data-i18n="method.card2.title">2. Plan</h3>
+            <p data-i18n="method.card2.text">Plan de seances ciblees avec objectifs precis et exercices adaptes.</p>
+          </article>
+          <article class="card method-card">
+            <h3 data-i18n="method.card3.title">3. Feedback</h3>
+            <p data-i18n="method.card3.text">Compte-rendu regulier pour ajuster la trajectoire et valider les progres.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="temoignages">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="testimonials.title">Temoignages</h2>
+          <p class="section-intro" data-i18n="testimonials.subtitle">Quelques retours recents de familles et d'etudiants accompagnes.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="testimonial-card">
+            <p data-i18n="testimonials.card1.quote">"Encadrement tres serieux, notre fils a repris confiance en maths en quelques semaines."</p>
+            <span data-i18n="testimonials.card1.author">Parent - Bruxelles</span>
+          </article>
+          <article class="testimonial-card">
+            <p data-i18n="testimonials.card2.quote">"Methodologie claire pour mes examens de finance. Suivi efficace et humain."</p>
+            <span data-i18n="testimonials.card2.author">Etudiante - Enseignement superieur</span>
+          </article>
+          <article class="testimonial-card">
+            <p data-i18n="testimonials.card3.quote">"Disponibilite rapide et explications tres pedagogiques pour les sciences."</p>
+            <span data-i18n="testimonials.card3.author">Parent - Brabant</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="faq.title">FAQ</h2>
+        </div>
+
+        <div class="faq-grid">
+          <details class="faq-item">
+            <summary data-i18n="faq.q1">Pourquoi n'affichez-vous pas les prix ?</summary>
+            <p data-i18n="faq.a1">Chaque demande est differente. Nous envoyons un devis personnalise selon niveau, matiere, format et frequence.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq.q2">Intervenez-vous uniquement a Bruxelles ?</summary>
+            <p data-i18n="faq.a2">Nous couvrons Bruxelles en presentiel et proposons aussi des cours en ligne selon les besoins.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq.q3">Prenez-vous l'enseignement superieur ?</summary>
+            <p data-i18n="faq.a3">Oui, notamment pour les matieres quantitatives, langues, finance et comptabilite.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq.q4">Sous quel delai etes-vous disponibles ?</summary>
+            <p data-i18n="faq.a4">Nous revenons rapidement avec une proposition adaptee, en general sous 24h ouvrables.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq.q5">Comment se passe le demarrage ?</summary>
+            <p data-i18n="faq.a5">Apres votre demande, nous validons objectifs et disponibilites puis planifions la premiere seance.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="contact.title">Contact</h2>
+          <p class="section-intro" data-i18n="contact.subtitle">Decrivez votre besoin. Nous revenons vers vous avec un plan et un devis personnalise.</p>
+        </div>
+
+        <div class="contact-layout">
+          <article class="contact-card">
+            <h3 data-i18n="contact.directTitle">Contact direct</h3>
+            <p data-i18n="contact.directText">Appelez ou ecrivez via WhatsApp. Remplacez les placeholders par vos numéros.</p>
+            <ul class="contact-list">
+              <li><strong>Bilal:</strong> <a href="tel:xxx">xxx</a></li>
+              <li><strong>Sami:</strong> <a href="tel:xxx">xxx</a></li>
+              <li><strong>Walid:</strong> <a href="tel:xxx">xxx</a></li>
+            </ul>
+            <a class="btn btn-secondary" href="contact.html" data-i18n="contact.pageLink">Ouvrir la page contact</a>
+          </article>
+
+          <article class="contact-card contact-form-card">
+            <h3 data-i18n="form.title">Demande de cours</h3>
+            <form id="contact-form" novalidate>
+              <div class="hp-field" aria-hidden="true">
+                <label for="website">Website</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+              </div>
+
+              <div class="form-grid">
+                <label>
+                  <span data-i18n="form.nameLabel">Nom</span>
+                  <input type="text" name="name" required data-i18n-placeholder="form.namePlaceholder" placeholder="Votre nom" />
+                </label>
+                <label>
+                  <span data-i18n="form.emailLabel">Email</span>
+                  <input type="email" name="email" required data-i18n-placeholder="form.emailPlaceholder" placeholder="vous@email.com" />
+                </label>
+                <label>
+                  <span data-i18n="form.phoneLabel">Telephone</span>
+                  <input type="tel" name="phone" required data-i18n-placeholder="form.phonePlaceholder" placeholder="+32 ..." />
+                </label>
+                <label>
+                  <span data-i18n="form.levelLabel">Niveau</span>
+                  <select name="level" required>
+                    <option value="" data-i18n="form.levelPlaceholder">Selectionnez un niveau</option>
+                    <option value="Secondaire" data-i18n="form.levelSecondary">Secondaire</option>
+                    <option value="Enseignement superieur" data-i18n="form.levelHigher">Enseignement superieur</option>
+                  </select>
+                </label>
+                <label>
+                  <span data-i18n="form.subjectLabel">Matiere</span>
+                  <input type="text" name="subject" required data-i18n-placeholder="form.subjectPlaceholder" placeholder="Ex: mathematiques" />
+                </label>
+                <label class="full-width">
+                  <span data-i18n="form.messageLabel">Message</span>
+                  <textarea name="message" rows="5" required data-i18n-placeholder="form.messagePlaceholder" placeholder="Contexte, disponibilites, objectif..."></textarea>
+                </label>
+              </div>
+
+              <button class="btn" type="submit" data-i18n="form.submit">Envoyer la demande</button>
+              <p id="form-status" role="status" aria-live="polite"></p>
+            </form>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>BCW Bruxelles</strong>
+        <p data-i18n="footer.text">Cours particuliers premium a Bruxelles, en ligne et a domicile.</p>
+      </div>
+      <div>
+        <div class="footer-links">
+          <a href="#top" data-i18n="footer.backTop">Retour en haut</a>
+          <a href="inscription.html" data-i18n="footer.register">Inscription</a>
+          <a href="contact.html" data-i18n="footer.contact">Contact</a>
+        </div>
+        <p>© <span id="year"></span> BCW Bruxelles</p>
       </div>
     </div>
+  </footer>
 
-    <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">
-      <a class="btn" href="inscription.html">S’inscrire</a>
-      <a class="btn secondary" href="contact.html">Nous contacter</a>
-    </div>
-  </div>
-</section>
-
-<!-- ======================
-     FAQ
-     ====================== -->
-<section class="section" style="background:var(--soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-  <div class="container">
-    <h2>FAQ</h2>
-    <div class="grid-2 faq">
-      <details>
-        <summary>Pourquoi pas de prix affiché ?</summary>
-        <p>Le tarif dépend du niveau, de la matière, du format (online/domicile/locaux) et de la fréquence. On propose un devis personnalisé après inscription.</p>
-      </details>
-      <details>
-        <summary>Où se déroulent les cours ?</summary>
-        <p>En ligne, à domicile, ou dans des locaux si disponibles. Tout se confirme après inscription selon vos préférences.</p>
-      </details>
-      <details>
-        <summary>Vous faites le supérieur (univ/haute école) ?</summary>
-        <p>Oui. Indique la matière + le programme dans l’inscription : on s’organise et on délègue si besoin.</p>
-      </details>
-      <details>
-        <summary>Combien de temps pour être recontacté ?</summary>
-        <p>Après l’inscription, on vous recontacte rapidement pour confirmer les détails et démarrer.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container footer-grid">
-    <div>
-      <strong style="color:var(--blue)">BCWbruxelles</strong>
-      <div class="small">Soutien scolaire — secondaire & supérieur</div>
-      <div class="small" style="margin-top:6px;">
-        Diplômés Solvay Brussels School (alumni)
-      </div>
-    </div>
-
-    <div>
-      <div class="small"><a href="contact.html">Contact</a> • <a href="inscription.html">Inscription</a></div>
-      <div class="small" style="margin-top:6px;">© <span id="year"></span> BCWbruxelles</div>
-    </div>
-  </div>
-</footer>
-
-<!-- ✅ CTA mobile (visible seulement sur téléphone) -->
-<div class="mobile-cta">
-  <a class="btn" href="inscription.html">S’inscrire</a>
-  <a class="btn secondary" href="contact.html">Contact</a>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

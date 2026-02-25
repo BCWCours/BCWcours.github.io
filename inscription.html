@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Inscription — BCWbruxelles</title>
-  <meta name="description" content="Inscription BCWbruxelles : secondaire & supérieur. Demande de devis." />
+  <meta name="description" content="Inscription BCWbruxelles : secondaire &amp; supérieur. Demande de devis." />
 
   <!-- ✅ Favicon -->
   <link rel="icon" href="assets/favicon.png" type="image/png">
@@ -33,9 +33,9 @@
         <span></span><span></span><span></span>
       </button>
       <ul>
-        <li><a class="link" href="index.html#offres">Offres</a></li>
+        <li><a class="link" href="index.html#offre">Offres</a></li>
         <li><a class="link" href="index.html#matieres">Matières</a></li>
-        <li><a class="link" href="index.html#equipe">Équipe</a></li>
+        <li><a class="link" href="index.html#methode">Équipe</a></li>
         <li><a class="link" href="contact.html">Contact</a></li>
         <li><a class="btn" href="inscription.html">S’inscrire</a></li>
       </ul>
@@ -46,32 +46,52 @@
 <section class="section">
   <div class="container">
     <h2>Inscription / Demande de devis</h2>
-    <p>Remplis le formulaire (2 minutes). On te recontacte pour confirmer le format + l’horaire et proposer un devis si nécessaire.</p>
+    <p>Remplis le formulaire (2 minutes). On te recontacte rapidement avec un format et un devis personnalisés.</p>
 
-    <!-- ✅ Le formulaire Tally est intégré dans VOTRE site via iframe -->
     <div class="form-wrap">
-      <iframe
-        data-tally-src="https://tally.so/r/XxDv7e"
-        loading="lazy"
-        width="100%"
-        height="820"
-        frameborder="0"
-        marginheight="0"
-        marginwidth="0"
-        title="Inscription BCWbruxelles">
-      </iframe>
+      <form id="contact-form" novalidate>
+        <div class="hp-field" aria-hidden="true">
+          <label for="website">Website</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+        </div>
 
-      <!-- Script officiel Tally pour charger l'iframe correctement -->
-      <script>
-        var d = document, w = "https://tally.so/widgets/embed.js";
-        var s = d.createElement("script"); s.src = w; s.async = true;
-        d.body.appendChild(s);
-      </script>
+        <div class="form-grid">
+          <label>
+            <span>Nom</span>
+            <input type="text" name="name" required placeholder="Votre nom" />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" required placeholder="vous@email.com" />
+          </label>
+          <label>
+            <span>Téléphone</span>
+            <input type="tel" name="phone" required placeholder="+32 ..." />
+          </label>
+          <label>
+            <span>Niveau</span>
+            <select name="level" required>
+              <option value="">Sélectionnez un niveau</option>
+              <option value="Secondaire">Secondaire</option>
+              <option value="Enseignement supérieur">Enseignement supérieur</option>
+            </select>
+          </label>
+          <label>
+            <span>Matière</span>
+            <input type="text" name="subject" required placeholder="Ex: mathématiques" />
+          </label>
+          <label class="full-width">
+            <span>Message</span>
+            <textarea name="message" rows="5" required placeholder="Contexte, disponibilités, objectif..."></textarea>
+          </label>
+        </div>
+
+        <button class="btn" type="submit">Envoyer la demande</button>
+        <p id="form-status" role="status" aria-live="polite"></p>
+      </form>
     </div>
 
-    <p class="small" style="margin-top:12px;">
-      En envoyant ce formulaire, vous acceptez d’être recontacté par BCWbruxelles.
-    </p>
+    <p class="small" style="margin-top:12px;">En envoyant ce formulaire, vous acceptez d’être recontacté par BCWbruxelles.</p>
   </div>
 </section>
 
@@ -79,7 +99,7 @@
   <div class="container footer-grid">
     <div>
       <strong style="color:var(--blue)">BCWbruxelles</strong>
-      <div class="small">Secondaire • Université • Haute école</div>
+      <div class="small">Secondaire • Enseignement supérieur</div>
     </div>
     <div class="small">
       <a href="index.html">Accueil</a> • <a href="contact.html">Contact</a>
