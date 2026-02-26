@@ -12,7 +12,7 @@ const translations = {
       register: "S'inscrire",
     },
     hero: {
-      pillFormats: "Bruxelles - En ligne - À domicile",
+      pillFormats: "En ligne - En présentiel - Dans nos locaux",
       pillFast: "Réponse rapide",
       kicker: "Accompagnement académique premium",
       titleLead: "BCWcours vous accompagne en",
@@ -25,32 +25,20 @@ const translations = {
       rotate7: "Finance & comptabilité",
       title: "Cours particuliers exigeants pour progresser durablement.",
       subtitle:
-        "BCWcours accompagne les parents, les élèves du secondaire et les étudiants de l'enseignement supérieur à Bruxelles, en ligne et à domicile, avec un suivi rigoureux et humain.",
+        "BCWcours accompagne les parents, les élèves du secondaire et les étudiants de l'enseignement supérieur à Bruxelles, en ligne, en présentiel et dans nos locaux, avec un suivi rigoureux et humain.",
       ctaPrimary: "Demander un cours",
       ctaSecondary: "Voir les matières",
       proof1: "Réponse sous 24h ouvrables",
       proof2: "Méthode claire en 3 étapes",
       proof3: "Suivi continu élève/parent",
-      service1: {
-        title: "Cours particuliers",
-        text: "Séances ciblées pour renforcer les bases et gagner en méthode.",
-      },
-      service2: {
-        title: "Aide aux devoirs",
-        text: "Organisation, régularité et encadrement concret au quotidien.",
-      },
-      service3: {
-        title: "Préparation examens",
-        text: "Plan de révision structuré pour performer le jour de l'épreuve.",
-      },
     },
     trust: {
       title: "Pourquoi les familles nous font confiance",
       subtitle:
-        "Une équipe de 3 diplômés Solvay Brussels School, un cadre clair et un accompagnement constant.",
+        "Notre parcours inclut Solvay Brussels School, mais surtout plusieurs années de terrain en cours particuliers et en accompagnement pédagogique.",
       card1: {
         title: "Équipe expérimentée",
-        text: "Cours assurés par des profils académiques solides, habitués aux objectifs d'examen.",
+        text: "Intervenants actifs depuis plusieurs années en tutorat et en préparation d'examens.",
       },
       card2: {
         title: "Cadre sur mesure",
@@ -109,12 +97,12 @@ const translations = {
         text: "Cours interactifs avec partage d'écran, supports et exercices en direct.",
       },
       card2: {
-        title: "À domicile",
-        text: "Accompagnement dans un cadre familier, avec suivi personnalisé.",
+        title: "En présentiel",
+        text: "Séances face à face avec suivi personnalisé et rythme régulier.",
       },
       card3: {
-        title: "Bruxelles",
-        text: "Sessions présentielles en ville selon disponibilités et localisation.",
+        title: "Dans nos locaux",
+        text: "Cadre de travail calme et structuré pour des séances efficaces.",
       },
     },
     local: {
@@ -124,7 +112,7 @@ const translations = {
       card1: {
         title: "Zone couverte",
         point1: "Bruxelles-Ville, Ixelles, Etterbeek, Uccle, Woluwe et communes voisines",
-        point2: "Cours à domicile selon disponibilités et déplacements",
+        point2: "Cours en présentiel selon disponibilités et déplacements",
         point3: "Alternative immédiate en ligne si besoin rapide",
       },
       card2: {
@@ -137,18 +125,54 @@ const translations = {
     subjects: {
       title: "Matières couvertes",
       subtitle:
-        "Nous couvrons les matières principales du secondaire et de l'enseignement supérieur.",
+        "Inventaire détaillé des matières les plus demandées au secondaire et dans l'enseignement supérieur.",
       card1: {
-        title: "Mathématiques & sciences",
-        text: "Maths, physique, chimie, statistiques et raisonnement scientifique.",
+        title: "Mathématiques (secondaire)",
+        item1: "Algèbre, équations, fonctions",
+        item2: "Géométrie, trigonométrie",
+        item3: "Probabilités, combinatoire, analyse",
       },
       card2: {
-        title: "Langues & communication",
-        text: "Français, néerlandais, anglais, méthodologie rédactionnelle et orale.",
+        title: "Mathématiques (enseignement supérieur)",
+        item1: "Analyse (limites, dérivées, intégrales)",
+        item2: "Algèbre linéaire",
+        item3: "Équations différentielles",
       },
       card3: {
-        title: "Finance & comptabilité",
-        text: "Principes comptables, analyse financière, exercices et cas pratiques.",
+        title: "Physique",
+        item1: "Mécanique, cinématique, dynamique",
+        item2: "Électricité, électromagnétisme",
+        item3: "Thermodynamique, ondes, optique",
+      },
+      card4: {
+        title: "Chimie",
+        item1: "Chimie générale et stœchiométrie",
+        item2: "Chimie organique et inorganique",
+        item3: "Physico-chimie et exercices guidés",
+      },
+      card5: {
+        title: "Économie",
+        item1: "Microéconomie",
+        item2: "Macroéconomie",
+        item3: "Économie d'entreprise",
+      },
+      card6: {
+        title: "Comptabilité",
+        item1: "Écritures comptables et journaux",
+        item2: "Bilan, compte de résultat",
+        item3: "Comptabilité analytique",
+      },
+      card7: {
+        title: "Finance",
+        item1: "Maths financières et actualisation",
+        item2: "Corporate finance",
+        item3: "Analyse financière et valorisation",
+      },
+      card8: {
+        title: "Statistiques",
+        item1: "Statistiques descriptives",
+        item2: "Probabilités, lois, inférence",
+        item3: "Tests, régression, interprétation",
       },
     },
     method: {
@@ -247,12 +271,13 @@ const translations = {
       honeypot: "Envoi bloqué.",
       fallback: "Erreur d'envoi. Vérifiez la configuration Supabase (table/policy) puis réessayez.",
       invalid: "Veuillez compléter les champs obligatoires.",
+      subjectRequired: "Veuillez sélectionner au moins une matière.",
       messageTooShort: "Le message doit contenir au moins 10 caractères.",
       mailSubject: "Demande de cours BCWcours",
     },
     footer: {
-      text: "Cours particuliers premium à Bruxelles, en ligne et à domicile.",
-      location: "Bruxelles • En ligne • À domicile",
+      text: "Cours particuliers premium à Bruxelles, en ligne, en présentiel et dans nos locaux.",
+      location: "En ligne • En présentiel • Dans nos locaux",
       ctaTitle: "Passez à l'étape suivante",
       ctaText: "Envoyez votre demande, recevez un retour clair sous 24h ouvrables.",
       ctaPrimary: "Demander un cours",
@@ -276,7 +301,7 @@ const translations = {
       register: "Inschrijven",
     },
     hero: {
-      pillFormats: "Brussel - Online - Aan huis",
+      pillFormats: "Online - In persoon - In onze lokalen",
       pillFast: "Snelle reactie",
       kicker: "Premium academische begeleiding",
       titleLead: "BCWcours begeleidt je in",
@@ -289,32 +314,20 @@ const translations = {
       rotate7: "Financiën & boekhouding",
       title: "Doelgerichte bijles om duurzaam vooruit te gaan.",
       subtitle:
-        "BCWcours begeleidt ouders, leerlingen uit het secundair en studenten in het hoger onderwijs in Brussel, online en aan huis, met een strikte en menselijke aanpak.",
+        "BCWcours begeleidt ouders, leerlingen uit het secundair en studenten in het hoger onderwijs in Brussel, online, in persoon en in onze lokalen, met een strikte en menselijke aanpak.",
       ctaPrimary: "Vraag een les aan",
       ctaSecondary: "Bekijk vakken",
       proof1: "Antwoord binnen 24 werkuren",
       proof2: "Duidelijke methode in 3 stappen",
       proof3: "Doorlopende opvolging leerling/ouder",
-      service1: {
-        title: "Bijles op maat",
-        text: "Gerichte sessies om basiskennis te versterken en methode op te bouwen.",
-      },
-      service2: {
-        title: "Huiswerkbegeleiding",
-        text: "Structuur, regelmaat en concrete begeleiding op weekbasis.",
-      },
-      service3: {
-        title: "Examenvoorbereiding",
-        text: "Duidelijk revisieplan om sterk te presteren op evaluaties.",
-      },
     },
     trust: {
       title: "Waarom gezinnen ons vertrouwen",
       subtitle:
-        "Een team van 3 afgestudeerden van Solvay Brussels School, met duidelijke structuur en constante opvolging.",
+        "Ons traject omvat Solvay Brussels School, maar vooral meerdere jaren praktijk in bijles en pedagogische begeleiding.",
       card1: {
         title: "Ervaren team",
-        text: "Lessen gegeven door sterke academische profielen met focus op examendoelen.",
+        text: "Begeleiders met jaren praktijk in tutoring en examenvoorbereiding.",
       },
       card2: {
         title: "Maatwerk",
@@ -373,12 +386,12 @@ const translations = {
         text: "Interactieve lessen met schermdeling, materiaal en oefeningen in realtime.",
       },
       card2: {
-        title: "Aan huis",
-        text: "Begeleiding in vertrouwde omgeving met persoonlijke opvolging.",
+        title: "In persoon",
+        text: "Face-to-face sessies met persoonlijke opvolging en vast ritme.",
       },
       card3: {
-        title: "Brussel",
-        text: "Fysieke sessies in Brussel volgens beschikbaarheid en locatie.",
+        title: "In onze lokalen",
+        text: "Rustige en gestructureerde leeromgeving voor efficiënte sessies.",
       },
     },
     local: {
@@ -388,7 +401,7 @@ const translations = {
       card1: {
         title: "Werkgebied",
         point1: "Brussel-Stad, Elsene, Etterbeek, Ukkel, Woluwe en nabije gemeenten",
-        point2: "Aan-huislessen volgens beschikbaarheid en verplaatsing",
+        point2: "Sessies in persoon volgens beschikbaarheid en verplaatsing",
         point3: "Meteen online alternatief bij dringende vraag",
       },
       card2: {
@@ -400,18 +413,54 @@ const translations = {
     },
     subjects: {
       title: "Gedekte vakken",
-      subtitle: "Wij begeleiden in de belangrijkste vakken van secundair en hoger onderwijs.",
+      subtitle: "Gedetailleerd overzicht van de meest gevraagde vakken in secundair en hoger onderwijs.",
       card1: {
-        title: "Wiskunde & wetenschappen",
-        text: "Wiskunde, fysica, chemie, statistiek en wetenschappelijk redeneren.",
+        title: "Wiskunde (secundair)",
+        item1: "Algebra, vergelijkingen, functies",
+        item2: "Meetkunde, goniometrie",
+        item3: "Kansrekening, combinatoriek, analyse",
       },
       card2: {
-        title: "Talen & communicatie",
-        text: "Frans, Nederlands, Engels, schrijfvaardigheid en mondelinge presentatie.",
+        title: "Wiskunde (hoger onderwijs)",
+        item1: "Analyse (limieten, afgeleiden, integralen)",
+        item2: "Lineaire algebra",
+        item3: "Differentiaalvergelijkingen",
       },
       card3: {
-        title: "Financiën & boekhouding",
-        text: "Boekhoudprincipes, financiële analyse, oefeningen en praktijkcases.",
+        title: "Fysica",
+        item1: "Mechanica, kinematica, dynamica",
+        item2: "Elektriciteit, elektromagnetisme",
+        item3: "Thermodynamica, golven, optica",
+      },
+      card4: {
+        title: "Chemie",
+        item1: "Algemene chemie en stoichiometrie",
+        item2: "Organische en anorganische chemie",
+        item3: "Fysicochemie en begeleide oefeningen",
+      },
+      card5: {
+        title: "Economie",
+        item1: "Micro-economie",
+        item2: "Macro-economie",
+        item3: "Bedrijfseconomie",
+      },
+      card6: {
+        title: "Boekhouding",
+        item1: "Boekingen en dagboeken",
+        item2: "Balans en resultatenrekening",
+        item3: "Analytische boekhouding",
+      },
+      card7: {
+        title: "Financiën",
+        item1: "Financiële wiskunde en actualisatie",
+        item2: "Corporate finance",
+        item3: "Financiële analyse en waardering",
+      },
+      card8: {
+        title: "Statistiek",
+        item1: "Beschrijvende statistiek",
+        item2: "Kansverdelingen en inferentie",
+        item3: "Toetsen, regressie en interpretatie",
       },
     },
     method: {
@@ -509,12 +558,13 @@ const translations = {
       honeypot: "Verzending geblokkeerd.",
       fallback: "Verzendfout. Controleer de Supabase-configuratie (tabel/policy) en probeer opnieuw.",
       invalid: "Vul de verplichte velden in.",
+      subjectRequired: "Selecteer minstens één vak.",
       messageTooShort: "Je bericht moet minstens 10 tekens bevatten.",
       mailSubject: "BCWcours lesaanvraag",
     },
     footer: {
-      text: "Premium bijles in Brussel, online en aan huis.",
-      location: "Brussel • Online • Aan huis",
+      text: "Premium bijles in Brussel, online, in persoon en in onze lokalen.",
+      location: "Online • In persoon • In onze lokalen",
       ctaTitle: "Zet de volgende stap",
       ctaText: "Dien je aanvraag in en ontvang binnen 24 werkuren een duidelijk antwoord.",
       ctaPrimary: "Vraag een les aan",

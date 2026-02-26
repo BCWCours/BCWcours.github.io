@@ -10,7 +10,7 @@
   <link rel="icon" href="assets/favicon.png" type="image/png" />
   <meta name="theme-color" content="#09529a" />
 
-  <link rel="stylesheet" href="styles.css?v=20260226g" />
+  <link rel="stylesheet" href="styles.css?v=20260226h" />
 </head>
 <body>
 
@@ -72,8 +72,8 @@
           </ol>
 
           <div class="enrollment-trust">
-            <span class="tag blue">Équipe Solvay Brussels School</span>
-            <span class="tag">Bruxelles - En ligne - À domicile</span>
+            <span class="tag blue">Équipe pédagogique expérimentée</span>
+            <span class="tag">En ligne - En présentiel - Dans nos locaux</span>
             <span class="tag orange">Réponse sous 24h ouvrables</span>
           </div>
 
@@ -101,11 +101,26 @@
                   <span>Téléphone</span>
                   <input type="tel" name="phone" required placeholder="+32 ..." autocomplete="tel" />
                 </label>
-                <label>
-                  <span>Matière</span>
-                  <input type="text" name="subject" required placeholder="Ex: mathématiques" />
-                </label>
               </div>
+            </fieldset>
+
+            <fieldset class="subjects-fieldset">
+              <legend>Matières (choix multiples)</legend>
+              <p class="small form-help">Sélectionnez une ou plusieurs matières. Maximum recommandé: 3.</p>
+              <div class="subjects-check-grid" role="group" aria-label="Choix des matières">
+                <label class="subject-check"><input type="checkbox" name="subjects" value="Mathématiques (secondaire)" />Mathématiques (secondaire)</label>
+                <label class="subject-check"><input type="checkbox" name="subjects" value="Mathématiques (enseignement supérieur)" />Mathématiques (enseignement supérieur)</label>
+                <label class="subject-check"><input type="checkbox" name="subjects" value="Physique" />Physique</label>
+                <label class="subject-check"><input type="checkbox" name="subjects" value="Chimie" />Chimie</label>
+                <label class="subject-check"><input type="checkbox" name="subjects" value="Économie" />Économie</label>
+                <label class="subject-check"><input type="checkbox" name="subjects" value="Comptabilité" />Comptabilité</label>
+                <label class="subject-check"><input type="checkbox" name="subjects" value="Finance" />Finance</label>
+                <label class="subject-check"><input type="checkbox" name="subjects" value="Statistiques" />Statistiques</label>
+              </div>
+              <label class="full-width">
+                <span>Autre matière (optionnel)</span>
+                <input type="text" name="subjectOther" placeholder="Ex: biologie, programmation, néerlandais..." />
+              </label>
             </fieldset>
 
             <fieldset>
@@ -123,9 +138,9 @@
                   <span>Format souhaité</span>
                   <select name="format" required>
                     <option value="">Sélectionnez un format</option>
-                    <option value="Bruxelles">Bruxelles</option>
                     <option value="En ligne">En ligne</option>
-                    <option value="A domicile">À domicile</option>
+                    <option value="En présentiel">En présentiel</option>
+                    <option value="Dans nos locaux">Dans nos locaux</option>
                   </select>
                 </label>
                 <label>
@@ -165,7 +180,7 @@
   <div class="container footer-grid footer-grid-simple">
     <div class="footer-brand-col">
       <strong>BCWcours</strong>
-      <p>Cours particuliers premium à Bruxelles, en ligne et à domicile.</p>
+      <p>Cours particuliers premium à Bruxelles, en ligne, en présentiel et dans nos locaux.</p>
       <div class="small">Secondaire - Enseignement supérieur</div>
     </div>
     <div class="footer-links-col">
@@ -178,7 +193,7 @@
   </div>
 </footer>
 
-<script src="global.js?v=20260226g"></script>
-<script src="form.js?v=20260226g"></script>
+<script src="global.js?v=20260226h"></script>
+<script src="form.js?v=20260226h"></script>
 </body>
 </html>

@@ -44,7 +44,7 @@
     }
 
     const targets = document.querySelectorAll(
-      ".card, .offer-card, .service-card, .hero-service-card, .testimonial-card, .faq-item, .contact-line, .contact-quick-btn, .contact-primary-card, .final-cta-card"
+      ".card, .offer-card, .service-card, .testimonial-card, .faq-item, .contact-line, .contact-quick-btn, .contact-primary-card, .final-cta-card"
     );
 
     const observer = new IntersectionObserver(

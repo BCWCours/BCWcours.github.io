@@ -42,8 +42,31 @@
     }
 
     const formData = new FormData(contactForm);
-    const payload = Object.fromEntries(formData.entries());
-    delete payload.website;
+    const selectedSubjects = Array.from(
+      contactForm.querySelectorAll('input[name="subjects"]:checked')
+    ).map((input) => input.value.trim()).filter(Boolean);
+    const subjectOther = String(formData.get("subjectOther") || "").trim();
+    if (!selectedSubjects.length && !subjectOther) {
+      setFormStatus(
+        messageForCurrentLanguage("form.subjectRequired", "Veuillez sélectionner au moins une matière."),
+        "error"
+      );
+      return;
+    }
+
+    const payload = {
+      name: String(formData.get("name") || "").trim(),
+      email: String(formData.get("email") || "").trim(),
+      phone: String(formData.get("phone") || "").trim(),
+      level: String(formData.get("level") || "").trim(),
+      format: String(formData.get("format") || "").trim(),
+      urgency: String(formData.get("urgency") || "").trim(),
+      message: String(formData.get("message") || "").trim(),
+      subject: [
+        ...selectedSubjects,
+        subjectOther ? `Autre: ${subjectOther}` : "",
+      ].filter(Boolean).join(" | "),
+    };
 
     const submitButton = contactForm.querySelector('button[type="submit"]');
     const originalButtonLabel = submitButton ? submitButton.textContent : "";
