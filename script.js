@@ -177,7 +177,7 @@ const translations = {
       sending: "Envoi en cours...",
       success: "Merci. Votre demande a bien ete envoyee.",
       honeypot: "Envoi bloque.",
-      fallback: "Endpoint indisponible: ouverture de votre messagerie.",
+      fallback: "Erreur d'envoi. Verifiez la configuration Supabase (table/policy) puis reessayez.",
       invalid: "Veuillez completer les champs obligatoires.",
       mailSubject: "Demande de cours BCW",
     },
@@ -364,7 +364,7 @@ const translations = {
       sending: "Verzenden...",
       success: "Bedankt. Je aanvraag werd goed verzonden.",
       honeypot: "Verzending geblokkeerd.",
-      fallback: "Endpoint niet beschikbaar: je e-mailapp wordt geopend.",
+      fallback: "Verzendfout. Controleer de Supabase-configuratie (tabel/policy) en probeer opnieuw.",
       invalid: "Vul de verplichte velden in.",
       mailSubject: "BCW lesaanvraag",
     },
@@ -379,6 +379,8 @@ const translations = {
 
 const STORAGE_KEY = "bcw-lang";
 const DEFAULT_LANG = "fr";
+const SUPABASE_URL = "https://kiwuncwivajenqyinrqb.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_sxowccgePeTvJjwF68CIhQ_KMqiYTTw";
 
 const burger = document.querySelector(".burger");
 const nav = document.querySelector("header nav");
@@ -534,33 +536,47 @@ if (contactForm && formStatus) {
     setFormStatus(messageForCurrentLanguage("form.sending"), "info");
 
     try {
-      const response = await fetch("/api/leads", {
+      const response = await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          apikey: SUPABASE_PUBLISHABLE_KEY,
+          Authorization: `Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
+          Prefer: "return=minimal",
         },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({
+          name: payload.name,
+          email: payload.email,
+          phone: payload.phone,
+          level: payload.level,
+          subject: payload.subject,
+          format: payload.format || null,
+          urgency: payload.urgency || null,
+          message: payload.message,
+          source: "website",
+        }),
       });
 
       if (!response.ok) {
-        throw new Error("Endpoint unavailable");
+        let errorDetails = "";
+        try {
+          const errorJson = await response.json();
+          errorDetails = errorJson?.message || JSON.stringify(errorJson);
+        } catch {
+          errorDetails = await response.text();
+        }
+        throw new Error(`Supabase insert failed (${response.status}): ${errorDetails}`);
       }
 
       setFormStatus(messageForCurrentLanguage("form.success"), "success");
       contactForm.reset();
+      const successUrl = contactForm.getAttribute("data-success-url") || "merci.html";
+      setTimeout(() => {
+        window.location.href = successUrl;
+      }, 650);
     } catch (error) {
-      const subject = encodeURIComponent(messageForCurrentLanguage("form.mailSubject") || "BCW");
-      const lines = [
-        `Nom: ${payload.name || ""}`,
-        `Email: ${payload.email || ""}`,
-        `Telephone: ${payload.phone || ""}`,
-        `Niveau: ${payload.level || ""}`,
-        `Matiere: ${payload.subject || ""}`,
-        `Message: ${payload.message || ""}`,
-      ];
-      const body = encodeURIComponent(lines.join("\n"));
-      window.location.href = `mailto:contact@bcwbruxelles.com?subject=${subject}&body=${body}`;
-      setFormStatus(messageForCurrentLanguage("form.fallback"), "info");
+      console.error(error);
+      setFormStatus(messageForCurrentLanguage("form.fallback"), "error");
     } finally {
       if (submitButton) {
         submitButton.disabled = false;
