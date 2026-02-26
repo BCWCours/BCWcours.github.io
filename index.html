@@ -17,7 +17,7 @@
   <meta name="twitter:description" content="Accompagnement premium: Bruxelles, en ligne et à domicile." />
   <link rel="icon" href="assets/favicon.png" type="image/png" />
   <meta name="theme-color" content="#09529a" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=20260226g" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -126,7 +126,22 @@
             <span class="pill pill-alert" data-i18n="hero.pillFast">Réponse rapide</span>
           </div>
 
-          <h1 data-i18n="hero.title">Cours particuliers exigeants pour progresser durablement.</h1>
+          <p class="hero-kicker" data-i18n="hero.kicker">Accompagnement académique premium</p>
+          <h1>
+            <span class="hero-title-static" data-i18n="hero.titleLead">BCWcours vous accompagne en</span>
+            <span class="hero-title-animated">
+              <span class="hero-rotator-word" data-hero-rotator-output data-i18n="hero.rotate1">Cours particuliers</span>
+            </span>
+          </h1>
+          <ul class="hero-rotator-source" aria-hidden="true">
+            <li data-hero-rotate-item data-i18n="hero.rotate1">Cours particuliers</li>
+            <li data-hero-rotate-item data-i18n="hero.rotate2">Aide aux devoirs</li>
+            <li data-hero-rotate-item data-i18n="hero.rotate3">Préparation examens</li>
+            <li data-hero-rotate-item data-i18n="hero.rotate4">Mathématiques</li>
+            <li data-hero-rotate-item data-i18n="hero.rotate5">Sciences</li>
+            <li data-hero-rotate-item data-i18n="hero.rotate6">Langues</li>
+            <li data-hero-rotate-item data-i18n="hero.rotate7">Finance &amp; comptabilité</li>
+          </ul>
           <p class="hero-subtitle" data-i18n="hero.subtitle">
             BCWcours accompagne les parents, les élèves du secondaire et les étudiants de l'enseignement supérieur
             à Bruxelles, en ligne et à domicile, avec un suivi rigoureux et humain.
@@ -134,13 +149,28 @@
 
           <div class="hero-actions">
             <a class="btn" href="inscription.html" data-i18n="hero.ctaPrimary">S'inscrire maintenant</a>
-            <a class="btn btn-secondary" href="tel:+32489520624" data-i18n="hero.ctaSecondary">Appeler</a>
+            <a class="btn btn-secondary" href="#matieres" data-i18n="hero.ctaSecondary">Voir les matières</a>
           </div>
 
           <div class="hero-trust-points">
             <span data-i18n="hero.proof1">Réponse sous 24h ouvrables</span>
             <span data-i18n="hero.proof2">Méthode claire en 3 étapes</span>
             <span data-i18n="hero.proof3">Suivi continu élève/parent</span>
+          </div>
+
+          <div class="hero-service-grid">
+            <article class="hero-service-card">
+              <h3 data-i18n="hero.service1.title">Cours particuliers</h3>
+              <p data-i18n="hero.service1.text">Séances ciblées pour renforcer les bases et gagner en méthode.</p>
+            </article>
+            <article class="hero-service-card">
+              <h3 data-i18n="hero.service2.title">Aide aux devoirs</h3>
+              <p data-i18n="hero.service2.text">Organisation, régularité et encadrement concret au quotidien.</p>
+            </article>
+            <article class="hero-service-card">
+              <h3 data-i18n="hero.service3.title">Préparation examens</h3>
+              <p data-i18n="hero.service3.text">Plan de révision structuré pour performer le jour de l'épreuve.</p>
+            </article>
           </div>
         </div>
       </div>
@@ -169,6 +199,33 @@
           <article class="card">
             <h3 data-i18n="trust.card4.title">Résultats mesurables</h3>
             <p data-i18n="trust.card4.text">Objectifs fixés en amont, progression suivie après chaque séance.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt service-section" id="accompagnement">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="services.title">Ce que nous proposons</h2>
+          <p class="section-intro" data-i18n="services.subtitle">Trois leviers complémentaires pour sécuriser la progression de l'élève.</p>
+        </div>
+
+        <div class="grid-3 service-grid">
+          <article class="service-card">
+            <span class="service-card-index">01</span>
+            <h3 data-i18n="services.card1.title">Cours particuliers ciblés</h3>
+            <p data-i18n="services.card1.text">Focus sur les lacunes prioritaires et les objectifs académiques du moment.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-card-index">02</span>
+            <h3 data-i18n="services.card2.title">Aide aux devoirs &amp; méthode</h3>
+            <p data-i18n="services.card2.text">Encadrement hebdomadaire pour structurer le travail et gagner en autonomie.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-card-index">03</span>
+            <h3 data-i18n="services.card3.title">Préparation examens</h3>
+            <p data-i18n="services.card3.text">Révisions planifiées, entraînements types et stratégie de performance.</p>
           </article>
         </div>
       </div>
@@ -405,7 +462,7 @@
     </div>
   </footer>
 
-  <script src="global.js?v=20260226f"></script>
-  <script src="i18n.js?v=20260226f"></script>
+  <script src="global.js?v=20260226g"></script>
+  <script src="i18n.js?v=20260226g"></script>
 </body>
 </html>

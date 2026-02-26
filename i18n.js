@@ -14,14 +14,35 @@ const translations = {
     hero: {
       pillFormats: "Bruxelles - En ligne - À domicile",
       pillFast: "Réponse rapide",
+      kicker: "Accompagnement académique premium",
+      titleLead: "BCWcours vous accompagne en",
+      rotate1: "Cours particuliers",
+      rotate2: "Aide aux devoirs",
+      rotate3: "Préparation examens",
+      rotate4: "Mathématiques",
+      rotate5: "Sciences",
+      rotate6: "Langues",
+      rotate7: "Finance & comptabilité",
       title: "Cours particuliers exigeants pour progresser durablement.",
       subtitle:
         "BCWcours accompagne les parents, les élèves du secondaire et les étudiants de l'enseignement supérieur à Bruxelles, en ligne et à domicile, avec un suivi rigoureux et humain.",
       ctaPrimary: "Demander un cours",
-      ctaSecondary: "Appeler",
+      ctaSecondary: "Voir les matières",
       proof1: "Réponse sous 24h ouvrables",
       proof2: "Méthode claire en 3 étapes",
       proof3: "Suivi continu élève/parent",
+      service1: {
+        title: "Cours particuliers",
+        text: "Séances ciblées pour renforcer les bases et gagner en méthode.",
+      },
+      service2: {
+        title: "Aide aux devoirs",
+        text: "Organisation, régularité et encadrement concret au quotidien.",
+      },
+      service3: {
+        title: "Préparation examens",
+        text: "Plan de révision structuré pour performer le jour de l'épreuve.",
+      },
     },
     trust: {
       title: "Pourquoi les familles nous font confiance",
@@ -42,6 +63,23 @@ const translations = {
       card4: {
         title: "Résultats mesurables",
         text: "Objectifs fixés en amont, progression suivie après chaque séance.",
+      },
+    },
+    services: {
+      title: "Ce que nous proposons",
+      subtitle:
+        "Trois leviers complémentaires pour sécuriser la progression de l'élève.",
+      card1: {
+        title: "Cours particuliers ciblés",
+        text: "Focus sur les lacunes prioritaires et les objectifs académiques du moment.",
+      },
+      card2: {
+        title: "Aide aux devoirs & méthode",
+        text: "Encadrement hebdomadaire pour structurer le travail et gagner en autonomie.",
+      },
+      card3: {
+        title: "Préparation examens",
+        text: "Révisions planifiées, entraînements types et stratégie de performance.",
       },
     },
     offer: {
@@ -240,14 +278,35 @@ const translations = {
     hero: {
       pillFormats: "Brussel - Online - Aan huis",
       pillFast: "Snelle reactie",
+      kicker: "Premium academische begeleiding",
+      titleLead: "BCWcours begeleidt je in",
+      rotate1: "Bijles op maat",
+      rotate2: "Huiswerkbegeleiding",
+      rotate3: "Examenvoorbereiding",
+      rotate4: "Wiskunde",
+      rotate5: "Wetenschappen",
+      rotate6: "Talen",
+      rotate7: "Financiën & boekhouding",
       title: "Doelgerichte bijles om duurzaam vooruit te gaan.",
       subtitle:
         "BCWcours begeleidt ouders, leerlingen uit het secundair en studenten in het hoger onderwijs in Brussel, online en aan huis, met een strikte en menselijke aanpak.",
       ctaPrimary: "Vraag een les aan",
-      ctaSecondary: "Bellen",
+      ctaSecondary: "Bekijk vakken",
       proof1: "Antwoord binnen 24 werkuren",
       proof2: "Duidelijke methode in 3 stappen",
       proof3: "Doorlopende opvolging leerling/ouder",
+      service1: {
+        title: "Bijles op maat",
+        text: "Gerichte sessies om basiskennis te versterken en methode op te bouwen.",
+      },
+      service2: {
+        title: "Huiswerkbegeleiding",
+        text: "Structuur, regelmaat en concrete begeleiding op weekbasis.",
+      },
+      service3: {
+        title: "Examenvoorbereiding",
+        text: "Duidelijk revisieplan om sterk te presteren op evaluaties.",
+      },
     },
     trust: {
       title: "Waarom gezinnen ons vertrouwen",
@@ -268,6 +327,23 @@ const translations = {
       card4: {
         title: "Meetbare vooruitgang",
         text: "Doelen vooraf bepaald, voortgang na elke sessie opgevolgd.",
+      },
+    },
+    services: {
+      title: "Wat we aanbieden",
+      subtitle:
+        "Drie complementaire pijlers om de vooruitgang van elke leerling te versnellen.",
+      card1: {
+        title: "Gerichte bijles",
+        text: "Focus op prioritaire lacunes en de actuele academische doelstellingen.",
+      },
+      card2: {
+        title: "Huiswerk & methode",
+        text: "Wekelijkse begeleiding om studiegewoonten te structureren en autonomie op te bouwen.",
+      },
+      card3: {
+        title: "Examenvoorbereiding",
+        text: "Geplande herhaling, oefenreeksen en een duidelijke prestatieaanpak.",
       },
     },
     offer: {
@@ -501,6 +577,7 @@ function applyTranslations(language) {
 
   localStorage.setItem(STORAGE_KEY, language);
   setActiveLanguageButton(language);
+  document.dispatchEvent(new CustomEvent("bcw:language-change", { detail: { language } }));
 }
 
 function messageForCurrentLanguage(key) {
