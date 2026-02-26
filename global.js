@@ -43,7 +43,7 @@
     if (!header) {
       return;
     }
-    header.classList.toggle("is-scrolled", window.scrollY > 10);
+    header.classList.toggle("is-hidden", window.scrollY > 10);
   }
 
   function initRevealAnimation() {

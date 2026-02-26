@@ -120,12 +120,11 @@ header {
   z-index: 80;
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
   background: #0b3565;
-  transition: box-shadow 0.2s ease, background-color 0.2s ease;
+  transition: transform 0.24s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-header.is-scrolled {
-  box-shadow: 0 8px 24px rgba(7, 23, 46, 0.24);
-  background: #082f5a;
+header.is-hidden {
+  transform: translateY(-105%);
 }
 
 .navbar {
