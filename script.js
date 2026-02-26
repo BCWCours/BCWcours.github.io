@@ -1,158 +1,171 @@
 const translations = {
   fr: {
     brand: {
-      tagline: "Secondaire - Enseignement superieur",
+      tagline: "Secondaire - Enseignement supérieur",
     },
     nav: {
       offer: "Offre",
-      subjects: "Matieres",
-      method: "Methode",
+      subjects: "Matières",
+      method: "Méthode",
       faq: "FAQ",
-      contactPage: "Page contact",
+      contactPage: "Contact",
       register: "S'inscrire",
     },
     hero: {
-      pillFormats: "Bruxelles - En ligne - A domicile",
-      pillFast: "Reponse rapide",
+      pillFormats: "Bruxelles - En ligne - À domicile",
+      pillFast: "Réponse rapide",
       title: "Cours particuliers exigeants pour progresser durablement.",
       subtitle:
-        "BCW accompagne les eleves du secondaire et les etudiants de l'enseignement superieur a Bruxelles, en ligne et a domicile, avec un suivi rigoureux et humain.",
+        "BCWcours accompagne les parents, les élèves du secondaire et les étudiants de l'enseignement supérieur à Bruxelles, en ligne et à domicile, avec un suivi rigoureux et humain.",
       ctaPrimary: "Demander un cours",
       ctaSecondary: "Appeler",
+      proof1: "Réponse sous 24h ouvrables",
+      proof2: "Méthode claire en 3 étapes",
+      proof3: "Suivi continu élève/parent",
     },
     trust: {
       title: "Pourquoi les familles nous font confiance",
       subtitle:
-        "Une equipe de 3 diplomes Solvay Brussels School, un cadre clair et un accompagnement constant.",
+        "Une équipe de 3 diplômés Solvay Brussels School, un cadre clair et un accompagnement constant.",
       card1: {
-        title: "Equipe experimentee",
-        text: "Cours assures par des profils academiques solides, habitues aux objectifs d'examen.",
+        title: "Équipe expérimentée",
+        text: "Cours assurés par des profils académiques solides, habitués aux objectifs d'examen.",
       },
       card2: {
         title: "Cadre sur mesure",
-        text: "Chaque eleve suit un plan adapte au niveau, au rythme et aux priorites.",
+        text: "Chaque élève suit un plan adapté au niveau, au rythme et aux priorités.",
       },
       card3: {
         title: "Communication rapide",
-        text: "Retour sous 24h ouvrables pour organiser le format, la matiere et le planning.",
+        text: "Retour sous 24h ouvrables pour organiser le format, la matière et le planning.",
       },
       card4: {
-        title: "Resultats mesurables",
-        text: "Objectifs fixes en amont, progression suivie apres chaque seance.",
+        title: "Résultats mesurables",
+        text: "Objectifs fixés en amont, progression suivie après chaque séance.",
       },
     },
     offer: {
       title: "Notre offre d'accompagnement",
       subtitle:
-        "Pas de prix affiche: nous preparons un devis personnalise selon niveau, matiere et format.",
+        "Nous n'affichons pas de tarif public: chaque demande reçoit un devis personnalisé selon le niveau, la matière et le format.",
       secondary: {
         title: "Secondaire",
-        text: "Consolidation des bases, preparation d'examens, remediations ciblees et methode de travail.",
-        point1: "Mathematiques, sciences, langues et plus",
+        text: "Consolidation des bases, préparation d'examens, remédiations ciblées et méthode de travail.",
+        point1: "Mathématiques, sciences, langues et plus",
         point2: "Suivi continu avec objectifs hebdomadaires",
         point3: "Format individuel ou mini-groupe",
       },
       higher: {
-        title: "Enseignement superieur",
-        text: "Appui methodologique et academique pour valider les cours exigeants et preparer les evaluations.",
-        point1: "Finance, comptabilite, statistiques, langues",
-        point2: "Preparation de travaux et examens",
-        point3: "Approche structuree orientee performance",
+        title: "Enseignement supérieur",
+        text: "Appui méthodologique et académique pour valider les cours exigeants et préparer les évaluations.",
+        point1: "Finance, comptabilité, statistiques, langues",
+        point2: "Préparation de travaux et examens",
+        point3: "Approche structurée orientée performance",
       },
     },
     formats: {
       title: "Formats",
-      subtitle: "Trois modalites simples pour s'adapter au planning de chaque famille.",
+      subtitle: "Trois modalités simples pour s'adapter au planning de chaque famille.",
       card1: {
         title: "En ligne",
-        text: "Cours interactifs avec partage d'ecran, supports et exercices en direct.",
+        text: "Cours interactifs avec partage d'écran, supports et exercices en direct.",
       },
       card2: {
-        title: "A domicile",
-        text: "Accompagnement dans un cadre familier, avec suivi personnalise.",
+        title: "À domicile",
+        text: "Accompagnement dans un cadre familier, avec suivi personnalisé.",
       },
       card3: {
         title: "Bruxelles",
-        text: "Sessions presencielles en ville selon disponibilites et localisation.",
+        text: "Sessions présentielles en ville selon disponibilités et localisation.",
       },
     },
     subjects: {
-      title: "Matieres couvertes",
+      title: "Matières couvertes",
       subtitle:
-        "Nous couvrons les matieres principales du secondaire et de l'enseignement superieur.",
+        "Nous couvrons les matières principales du secondaire et de l'enseignement supérieur.",
       card1: {
-        title: "Mathematiques & sciences",
+        title: "Mathématiques & sciences",
         text: "Maths, physique, chimie, statistiques et raisonnement scientifique.",
       },
       card2: {
         title: "Langues & communication",
-        text: "Francais, neerlandais, anglais, methodologie redactionnelle et orale.",
+        text: "Français, néerlandais, anglais, méthodologie rédactionnelle et orale.",
       },
       card3: {
-        title: "Finance & comptabilite",
-        text: "Principes comptables, analyse financiere, exercices et cas pratiques.",
+        title: "Finance & comptabilité",
+        text: "Principes comptables, analyse financière, exercices et cas pratiques.",
       },
     },
     method: {
-      title: "Methode & suivi",
-      subtitle: "Un processus clair en 3 etapes, identique pour tous les formats.",
+      title: "Méthode & suivi",
+      subtitle: "Un processus clair en 3 étapes, identique pour tous les formats.",
       card1: {
         title: "1. Diagnostic",
-        text: "Evaluation rapide des acquis, blocages et priorites academiques.",
+        text: "Évaluation rapide des acquis, blocages et priorités académiques.",
       },
       card2: {
         title: "2. Plan",
-        text: "Plan de seances ciblees avec objectifs precis et exercices adaptes.",
+        text: "Plan de séances ciblées avec objectifs précis et exercices adaptés.",
       },
       card3: {
         title: "3. Feedback",
-        text: "Compte-rendu regulier pour ajuster la trajectoire et valider les progres.",
+        text: "Compte-rendu régulier pour ajuster la trajectoire et valider les progrès.",
       },
     },
     testimonials: {
-      title: "Temoignages",
-      subtitle: "Quelques retours recents de familles et d'etudiants accompagnes.",
+      title: "Témoignages",
+      subtitle: "Quelques retours récents de familles et d'étudiants accompagnés.",
       card1: {
         quote:
-          '"Encadrement tres serieux, notre fils a repris confiance en maths en quelques semaines."',
+          '"Encadrement très sérieux, notre fils a repris confiance en maths en quelques semaines."',
         author: "Parent - Bruxelles",
       },
       card2: {
         quote:
-          '"Methodologie claire pour mes examens de finance. Suivi efficace et humain."',
-        author: "Etudiante - Enseignement superieur",
+          '"Méthodologie claire pour mes examens de finance. Suivi efficace et humain."',
+        author: "Étudiante - Enseignement supérieur",
       },
       card3: {
         quote:
-          '"Disponibilite rapide et explications tres pedagogiques pour les sciences."',
+          '"Disponibilité rapide et explications très pédagogiques pour les sciences."',
         author: "Parent - Brabant",
       },
     },
     faq: {
       title: "FAQ",
       q1: "Pourquoi n'affichez-vous pas les prix ?",
-      a1: "Chaque demande est differente. Nous envoyons un devis personnalise selon niveau, matiere, format et frequence.",
-      q2: "Intervenez-vous uniquement a Bruxelles ?",
-      a2: "Nous couvrons Bruxelles en presentiel et proposons aussi des cours en ligne selon les besoins.",
-      q3: "Prenez-vous l'enseignement superieur ?",
-      a3: "Oui, notamment pour les matieres quantitatives, langues, finance et comptabilite.",
-      q4: "Sous quel delai etes-vous disponibles ?",
-      a4: "Nous revenons rapidement avec une proposition adaptee, en general sous 24h ouvrables.",
-      q5: "Comment se passe le demarrage ?",
-      a5: "Apres votre demande, nous validons objectifs et disponibilites puis planifions la premiere seance.",
+      a1: "Chaque demande est différente. Nous envoyons un devis personnalisé selon le niveau, la matière, le format et la fréquence.",
+      q2: "Intervenez-vous uniquement à Bruxelles ?",
+      a2: "Nous couvrons Bruxelles en présentiel et proposons aussi des cours en ligne selon les besoins.",
+      q3: "Prenez-vous l'enseignement supérieur ?",
+      a3: "Oui, notamment pour les matières quantitatives, les langues, la finance et la comptabilité.",
+      q4: "Sous quel délai êtes-vous disponibles ?",
+      a4: "Nous revenons rapidement avec une proposition adaptée, en général sous 24h ouvrables.",
+      q5: "Comment se passe le démarrage ?",
+      a5: "Après votre demande, nous validons objectifs et disponibilités puis planifions la première séance.",
+    },
+    finalCta: {
+      title: "Un dernier point avant de démarrer",
+      subtitle:
+        "Passez par notre page contact pour choisir le meilleur canal, puis lancez votre inscription complète.",
+      point1: "Canaux directs: téléphone, WhatsApp, Instagram, Facebook",
+      point2: "Réponse sous 24h ouvrables",
+      point3: "Ensuite, inscription claire en 2 minutes",
+      primary: "Voir la page contact",
+      secondary: "Aller à l'inscription",
     },
     contact: {
       title: "Contact",
       subtitle:
-        "Decrivez votre besoin. Nous revenons vers vous avec un plan et un devis personnalise.",
+        "Décrivez votre besoin. Nous revenons vers vous avec un plan et un devis personnalisé.",
       directTitle: "Contact direct",
       directText:
-        "Appelez-nous ou ecrivez-nous sur Instagram/Facebook.",
+        "Appelez-nous ou écrivez-nous sur Instagram/Facebook.",
       pageLink: "Ouvrir la page contact",
       signupTitle: "Demande de cours premium",
       signupText:
-        "Le formulaire complet est centralise sur la page Inscription pour une prise en charge plus rapide et structuree.",
-      signupPoint1: "Formulaire detaille en moins de 2 minutes",
+        "Le formulaire complet est centralisé sur la page Inscription pour une prise en charge plus rapide et structurée.",
+      signupPoint1: "Formulaire détaillé en moins de 2 minutes",
       signupPoint2: "Analyse rapide de votre besoin",
       signupPoint3: "Retour avec plan d'accompagnement et devis",
       signupCta: "Ouvrir l'inscription",
@@ -163,27 +176,27 @@ const translations = {
       namePlaceholder: "Votre nom",
       emailLabel: "Email",
       emailPlaceholder: "vous@email.com",
-      phoneLabel: "Telephone",
+      phoneLabel: "Téléphone",
       phonePlaceholder: "+32 ...",
       levelLabel: "Niveau",
-      levelPlaceholder: "Selectionnez un niveau",
+      levelPlaceholder: "Sélectionnez un niveau",
       levelSecondary: "Secondaire",
-      levelHigher: "Enseignement superieur",
-      subjectLabel: "Matiere",
-      subjectPlaceholder: "Ex: mathematiques",
+      levelHigher: "Enseignement supérieur",
+      subjectLabel: "Matière",
+      subjectPlaceholder: "Ex: mathématiques",
       messageLabel: "Message",
-      messagePlaceholder: "Contexte, disponibilites, objectif...",
+      messagePlaceholder: "Contexte, disponibilités, objectif...",
       submit: "Envoyer la demande",
       sending: "Envoi en cours...",
-      success: "Merci. Votre demande a bien ete envoyee.",
-      honeypot: "Envoi bloque.",
-      fallback: "Erreur d'envoi. Verifiez la configuration Supabase (table/policy) puis reessayez.",
-      invalid: "Veuillez completer les champs obligatoires.",
-      messageTooShort: "Le message doit contenir au moins 10 caracteres.",
-      mailSubject: "Demande de cours BCW",
+      success: "Merci. Votre demande a bien été envoyée.",
+      honeypot: "Envoi bloqué.",
+      fallback: "Erreur d'envoi. Vérifiez la configuration Supabase (table/policy) puis réessayez.",
+      invalid: "Veuillez compléter les champs obligatoires.",
+      messageTooShort: "Le message doit contenir au moins 10 caractères.",
+      mailSubject: "Demande de cours BCWcours",
     },
     footer: {
-      text: "Cours particuliers premium a Bruxelles, en ligne et a domicile.",
+      text: "Cours particuliers premium à Bruxelles, en ligne et à domicile.",
       backTop: "Retour en haut",
       register: "Inscription",
       contact: "Contact",
@@ -198,7 +211,7 @@ const translations = {
       subjects: "Vakken",
       method: "Methode",
       faq: "FAQ",
-      contactPage: "Contactpagina",
+      contactPage: "Contact",
       register: "Inschrijven",
     },
     hero: {
@@ -206,9 +219,12 @@ const translations = {
       pillFast: "Snelle reactie",
       title: "Doelgerichte bijles om duurzaam vooruit te gaan.",
       subtitle:
-        "BCW begeleidt leerlingen uit het secundair en studenten in het hoger onderwijs in Brussel, online en aan huis, met een strikte en menselijke aanpak.",
+        "BCWcours begeleidt ouders, leerlingen uit het secundair en studenten in het hoger onderwijs in Brussel, online en aan huis, met een strikte en menselijke aanpak.",
       ctaPrimary: "Vraag een les aan",
       ctaSecondary: "Bellen",
+      proof1: "Antwoord binnen 24 werkuren",
+      proof2: "Duidelijke methode in 3 stappen",
+      proof3: "Doorlopende opvolging leerling/ouder",
     },
     trust: {
       title: "Waarom gezinnen ons vertrouwen",
@@ -234,7 +250,7 @@ const translations = {
     offer: {
       title: "Ons begeleidingsaanbod",
       subtitle:
-        "Geen vaste prijs op de site: we maken een offerte op maat volgens niveau, vak en format.",
+        "Geen publieke prijs op de site: we maken een offerte op maat volgens niveau, vak en format.",
       secondary: {
         title: "Secundair",
         text: "Versterking van basiskennis, examenvoorbereiding, gerichte remediëring en studiemethode.",
@@ -330,6 +346,16 @@ const translations = {
       q5: "Hoe start de begeleiding?",
       a5: "Na je aanvraag stemmen we doelen en planning af en plannen we de eerste sessie.",
     },
+    finalCta: {
+      title: "Nog één stap voor je start",
+      subtitle:
+        "Bekijk eerst onze contactpagina om het juiste kanaal te kiezen en start daarna je volledige inschrijving.",
+      point1: "Directe kanalen: telefoon, WhatsApp, Instagram, Facebook",
+      point2: "Antwoord binnen 24 werkuren",
+      point3: "Daarna heldere inschrijving in 2 minuten",
+      primary: "Bekijk contactpagina",
+      secondary: "Ga naar inschrijving",
+    },
     contact: {
       title: "Contact",
       subtitle:
@@ -368,7 +394,7 @@ const translations = {
       fallback: "Verzendfout. Controleer de Supabase-configuratie (tabel/policy) en probeer opnieuw.",
       invalid: "Vul de verplichte velden in.",
       messageTooShort: "Je bericht moet minstens 10 tekens bevatten.",
-      mailSubject: "BCW lesaanvraag",
+      mailSubject: "BCWcours lesaanvraag",
     },
     footer: {
       text: "Premium bijles in Brussel, online en aan huis.",
@@ -378,7 +404,6 @@ const translations = {
     },
   },
 };
-
 const STORAGE_KEY = "bcw-lang";
 const DEFAULT_LANG = "fr";
 const SUPABASE_URL = "https://kiwuncwivajenqyinrqb.supabase.co";

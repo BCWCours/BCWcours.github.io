@@ -370,6 +370,33 @@ nav ul {
   flex-wrap: wrap;
 }
 
+.hero-trust-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hero-trust-points span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  background: rgba(255, 255, 255, 0.09);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.hero-trust-points span::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #ffdf9f;
+}
+
 /* Layout grids */
 .grid-2,
 .grid-3,
@@ -511,6 +538,58 @@ nav ul {
 .faq-item p {
   color: var(--color-muted);
   margin-top: var(--space-2);
+}
+
+/* Final CTA */
+.final-cta {
+  background:
+    radial-gradient(920px 380px at 8% -20%, rgba(200, 155, 60, 0.28), transparent 60%),
+    radial-gradient(920px 420px at 92% 0%, rgba(31, 78, 135, 0.2), transparent 58%),
+    linear-gradient(180deg, #fdf8ee 0%, #f2f6fd 100%);
+}
+
+.final-cta-card {
+  border-radius: calc(var(--radius-lg) + 2px);
+  border: 1px solid rgba(200, 155, 60, 0.32);
+  background:
+    linear-gradient(140deg, rgba(11, 43, 83, 0.96) 0%, rgba(14, 48, 90, 0.92) 62%, rgba(200, 155, 60, 0.9) 170%);
+  box-shadow: 0 24px 56px rgba(7, 23, 46, 0.24);
+  padding: clamp(24px, 3vw, 38px);
+}
+
+.final-cta-card h2 {
+  margin-bottom: var(--space-2);
+  color: #ffffff;
+}
+
+.final-cta-card p {
+  color: rgba(255, 255, 255, 0.86);
+  max-width: 860px;
+}
+
+.final-cta-points {
+  margin: var(--space-3) 0 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 650;
+}
+
+.final-cta-actions {
+  margin-top: var(--space-4);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.final-cta-actions .btn-secondary {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+}
+
+.final-cta-actions .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
 }
 
 /* Contact */
@@ -1161,6 +1240,10 @@ footer .small {
   }
 
   .hero-actions .btn {
+    width: 100%;
+  }
+
+  .final-cta-actions .btn {
     width: 100%;
   }
 
