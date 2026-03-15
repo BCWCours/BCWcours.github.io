@@ -3,17 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>Inscription - BCWcours</title>
   <meta name="description" content="Demande de cours BCWcours pour le secondaire et l'enseignement supérieur." />
-
   <link rel="icon" href="assets/favicon.png" type="image/png" />
   <meta name="theme-color" content="#09529a" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260315" />
+  <link rel="stylesheet" href="styles.css?v=20260315b" />
 </head>
 <body>
 
@@ -28,7 +25,6 @@
         <span>Inscription</span>
       </div>
     </a>
-
     <nav>
       <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -51,13 +47,13 @@
       <div class="signup-hero">
         <span class="signup-kicker">Demande de cours BCWcours</span>
         <h1>Inscription</h1>
-        <p>Un formulaire unique, clair et structuré pour organiser rapidement votre accompagnement.</p>
+        <p>Merci de remplir ce formulaire. Une fois complété, vous bénéficierez d'un appel pour organiser votre accompagnement.</p>
       </div>
 
       <div class="enrollment-layout">
         <aside class="enrollment-aside card">
-          <h2>Pourquoi passer par cette page</h2>
-          <p>Nous centralisons toutes les demandes pour garantir une réponse rapide et un suivi premium.</p>
+          <h2>Pourquoi passer par ici</h2>
+          <p>Toutes les demandes sont centralisées pour garantir un suivi rapide et personnalisé.</p>
 
           <ol class="enrollment-steps">
             <li>
@@ -75,94 +71,176 @@
           </ol>
 
           <div class="enrollment-trust">
-            <span class="tag blue">Équipe pédagogique expérimentée</span>
-            <span class="tag">En ligne - En présentiel - Dans nos locaux</span>
-            <span class="tag orange">Réponse sous 24h ouvrables</span>
+            <span class="tag blue">Équipe expérimentée</span>
+            <span class="tag">En ligne · En présentiel · Nos locaux</span>
+            <span class="tag orange">Réponse sous 24h</span>
           </div>
 
+          <div class="enrollment-phones">
+            <h3>Contact direct</h3>
+            <p>Bilal — <a href="tel:+32489520624">+32 489 52 06 24</a></p>
+            <p>WhatsApp disponible</p>
+          </div>
         </aside>
 
         <article class="enrollment-form-wrap">
           <form id="contact-form" class="premium-form" data-success-url="merci.html" novalidate>
+            <!-- Honeypot -->
             <div class="hp-field" aria-hidden="true">
               <label for="website">Website</label>
               <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
             </div>
 
+            <!-- 1. Coordonnées -->
             <fieldset>
               <legend>Coordonnées</legend>
               <div class="form-grid">
-                <label>
-                  <span>Nom</span>
-                  <input type="text" name="name" required placeholder="Votre nom" autocomplete="name" />
+                <label class="full-width">
+                  <span>Nom et prénom de l'élève *</span>
+                  <input type="text" name="name" required placeholder="Prénom Nom de l'élève" autocomplete="name" />
+                </label>
+                <label class="full-width">
+                  <span>Nom et prénom du parent <em style="font-weight:400;color:var(--color-muted)">(si l'élève est mineur)</em></span>
+                  <input type="text" name="parent_name" placeholder="Prénom Nom du parent" autocomplete="off" />
                 </label>
                 <label>
-                  <span>Email</span>
-                  <input type="email" name="email" required placeholder="vous@email.com" autocomplete="email" />
-                </label>
-                <label>
-                  <span>Téléphone</span>
+                  <span>Téléphone *</span>
                   <input type="tel" name="phone" required placeholder="+32 ..." autocomplete="tel" />
+                </label>
+                <label>
+                  <span>Email *</span>
+                  <input type="email" name="email" required placeholder="vous@email.com" autocomplete="email" />
                 </label>
               </div>
             </fieldset>
 
+            <!-- 2. Matières -->
             <fieldset class="subjects-fieldset">
-              <legend>Matières (choix multiples)</legend>
-              <p class="small form-help">Sélectionnez une ou plusieurs matières. Maximum recommandé: 3.</p>
+              <legend>Matières (max 3) *</legend>
+              <p class="small form-help">Sélectionnez au plus 3 matières.</p>
               <div class="subjects-check-grid" role="group" aria-label="Choix des matières">
-                <label class="subject-check"><input type="checkbox" name="subjects" value="Mathématiques (secondaire)" />Mathématiques (secondaire)</label>
-                <label class="subject-check"><input type="checkbox" name="subjects" value="Mathématiques (enseignement supérieur)" />Mathématiques (enseignement supérieur)</label>
+                <label class="subject-check"><input type="checkbox" name="subjects" value="Mathématiques" />Mathématiques</label>
+                <label class="subject-check"><input type="checkbox" name="subjects" value="Statistiques" />Statistiques</label>
                 <label class="subject-check"><input type="checkbox" name="subjects" value="Physique" />Physique</label>
                 <label class="subject-check"><input type="checkbox" name="subjects" value="Chimie" />Chimie</label>
+                <label class="subject-check"><input type="checkbox" name="subjects" value="Biologie" />Biologie</label>
                 <label class="subject-check"><input type="checkbox" name="subjects" value="Économie" />Économie</label>
                 <label class="subject-check"><input type="checkbox" name="subjects" value="Comptabilité" />Comptabilité</label>
                 <label class="subject-check"><input type="checkbox" name="subjects" value="Finance" />Finance</label>
-                <label class="subject-check"><input type="checkbox" name="subjects" value="Statistiques" />Statistiques</label>
+                <label class="subject-check"><input type="checkbox" name="subjects" value="Français" />Français</label>
+                <label class="subject-check"><input type="checkbox" name="subjects" value="Anglais" />Anglais</label>
+                <label class="subject-check"><input type="checkbox" name="subjects" value="Néerlandais" />Néerlandais</label>
               </div>
-              <label class="full-width">
-                <span>Autre matière (optionnel)</span>
-                <input type="text" name="subjectOther" placeholder="Ex: biologie, programmation, néerlandais..." />
+              <label style="margin-top:10px;display:grid;gap:8px;font-weight:700;font-size:.92rem;color:var(--color-primary)">
+                <span>Autre matière</span>
+                <input type="text" name="subjectOther" placeholder="Ex: programmation, droit..." />
               </label>
             </fieldset>
 
+            <!-- 3. Établissement -->
             <fieldset>
-              <legend>Cadre académique</legend>
+              <legend>Établissement</legend>
               <div class="form-grid">
-                <label>
-                  <span>Niveau</span>
-                  <select name="level" required>
-                    <option value="">Sélectionnez un niveau</option>
-                    <option value="Secondaire">Secondaire</option>
-                    <option value="Enseignement supérieur">Enseignement supérieur</option>
-                  </select>
-                </label>
-                <label>
-                  <span>Format souhaité</span>
-                  <select name="format" required>
-                    <option value="">Sélectionnez un format</option>
-                    <option value="En ligne">En ligne</option>
-                    <option value="En présentiel">En présentiel</option>
-                    <option value="Dans nos locaux">Dans nos locaux</option>
-                  </select>
-                </label>
-                <label>
-                  <span>Priorité</span>
-                  <select name="urgency" required>
-                    <option value="">Sélectionnez</option>
-                    <option value="Standard">Standard (sous 24h)</option>
-                    <option value="Urgent">Urgent (besoin rapide)</option>
-                  </select>
+                <div class="full-width">
+                  <label style="display:block;margin-bottom:8px;font-weight:700;font-size:.92rem;color:var(--color-primary)">
+                    Type d'établissement *
+                  </label>
+                  <div class="field-radio-group" role="radiogroup">
+                    <label class="field-radio-opt">
+                      <input type="radio" name="school_type" value="Francophone" required />
+                      <span>Francophone</span>
+                    </label>
+                    <label class="field-radio-opt">
+                      <input type="radio" name="school_type" value="Néerlandophone" />
+                      <span>Néerlandophone</span>
+                    </label>
+                  </div>
+                </div>
+                <label class="full-width">
+                  <span>Nom de l'établissement *</span>
+                  <input type="text" name="school_name" required placeholder="Ex: Lycée Émile Jacqmain, ULB, HEC..." />
                 </label>
               </div>
             </fieldset>
 
+            <!-- 4. Niveau & Année -->
             <fieldset>
-              <legend>Objectif</legend>
+              <legend>Niveau &amp; Année</legend>
+              <div class="form-grid">
+                <div class="full-width">
+                  <label style="display:block;margin-bottom:8px;font-weight:700;font-size:.92rem;color:var(--color-primary)">
+                    Niveau *
+                  </label>
+                  <div class="field-radio-group" role="radiogroup">
+                    <label class="field-radio-opt">
+                      <input type="radio" name="niveau" value="Primaire" required />
+                      <span>Primaire</span>
+                    </label>
+                    <label class="field-radio-opt">
+                      <input type="radio" name="niveau" value="Secondaire" />
+                      <span>Secondaire</span>
+                    </label>
+                    <label class="field-radio-opt">
+                      <input type="radio" name="niveau" value="Enseignement supérieur" />
+                      <span>Enseignement supérieur</span>
+                    </label>
+                    <label class="field-radio-opt">
+                      <input type="radio" name="niveau" value="Autre" />
+                      <span>Autre</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Année (visible only if Secondaire) -->
+                <div class="full-width year-field-row" id="year-field-row">
+                  <label style="display:block;margin-bottom:8px;font-weight:700;font-size:.92rem;color:var(--color-primary)">
+                    Année
+                  </label>
+                  <div class="year-grid" role="radiogroup">
+                    <label class="year-pill"><input type="radio" name="year" value="1ère" /><span>1ère</span></label>
+                    <label class="year-pill"><input type="radio" name="year" value="2ème" /><span>2ème</span></label>
+                    <label class="year-pill"><input type="radio" name="year" value="3ème" /><span>3ème</span></label>
+                    <label class="year-pill"><input type="radio" name="year" value="4ème" /><span>4ème</span></label>
+                    <label class="year-pill"><input type="radio" name="year" value="5ème" /><span>5ème</span></label>
+                    <label class="year-pill"><input type="radio" name="year" value="6ème" /><span>6ème</span></label>
+                    <label class="year-pill"><input type="radio" name="year" value="Autre" /><span>Autre</span></label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- 5. Formule -->
+            <fieldset>
+              <legend>Formule *</legend>
+              <div class="radio-cards" role="radiogroup">
+                <label class="radio-card-label">
+                  <input type="radio" name="formula" value="Cours particuliers" required />
+                  <span class="rci">📚</span>
+                  <strong>Cours particuliers</strong>
+                  <span class="rcd">Séances ciblées sur vos lacunes</span>
+                </label>
+                <label class="radio-card-label">
+                  <input type="radio" name="formula" value="Aide aux devoirs" />
+                  <span class="rci">✏️</span>
+                  <strong>Aide aux devoirs</strong>
+                  <span class="rcd">Encadrement hebdomadaire régulier</span>
+                </label>
+                <label class="radio-card-label">
+                  <input type="radio" name="formula" value="Préparation examens" />
+                  <span class="rci">🎯</span>
+                  <strong>Préparation examens</strong>
+                  <span class="rcd">Révisions intensives avant épreuve</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- 6. Message (optionnel) -->
+            <fieldset>
+              <legend>Message <em style="font-weight:400;color:var(--color-muted)">(optionnel)</em></legend>
               <div class="form-grid">
                 <label class="full-width">
-                  <span>Message</span>
-                  <textarea name="message" rows="6" required minlength="10" maxlength="3000" placeholder="Contexte, disponibilités, objectif, épreuves à préparer..."></textarea>
+                  <span>Contexte, disponibilités, précisions</span>
+                  <textarea name="message" rows="4" maxlength="3000" placeholder="Ex: objectif, période souhaitée, jour disponibles..."></textarea>
                 </label>
               </div>
             </fieldset>
@@ -196,7 +274,7 @@
   </div>
 </footer>
 
-<script src="global.js?v=20260226j"></script>
-<script src="form.js?v=20260226j"></script>
+<script src="global.js?v=20260315b"></script>
+<script src="form.js?v=20260315b"></script>
 </body>
 </html>

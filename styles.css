@@ -1667,3 +1667,379 @@ footer .small {
     grid-template-columns: 1fr;
   }
 }
+
+/* ===== Stats strip ===== */
+.stats-strip {
+  background: #091f3a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.stats-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  flex: 1;
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 22px 28px;
+  border-right: 1px solid rgba(255, 255, 255, 0.09);
+  text-align: center;
+}
+
+.stat-item:last-child {
+  border-right: 0;
+}
+
+.stat-item strong {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #ffd79f;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.stat-item span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.64);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ===== Service card icon ===== */
+.service-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 158, 27, 0.12);
+  border: 1px solid rgba(255, 158, 27, 0.28);
+  display: grid;
+  place-items: center;
+  margin-bottom: 10px;
+}
+
+.service-card-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: #c88f29;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ===== Method steps strip ===== */
+.method-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.method-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 22px 20px;
+  border-right: 1px solid var(--color-border);
+}
+
+.method-step:last-child {
+  border-right: 0;
+}
+
+.method-step-num {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #1f1604;
+  font-size: 0.88rem;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  margin-top: 1px;
+}
+
+.method-step-body strong {
+  display: block;
+  color: var(--color-primary);
+  font-size: 1rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.method-step-body p {
+  color: var(--color-muted);
+  font-size: 0.86rem;
+}
+
+/* ===== Matières tabs ===== */
+.tabs-nav {
+  display: flex;
+  gap: 4px;
+  margin-bottom: var(--space-4);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0;
+}
+
+.tab-btn {
+  border: 0;
+  background: transparent;
+  color: var(--color-muted);
+  padding: 10px 18px;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  border-radius: 8px 8px 0 0;
+  transition: color 0.16s, border-color 0.16s, background 0.16s;
+}
+
+.tab-btn:hover {
+  color: var(--color-primary);
+  background: rgba(9, 82, 154, 0.04);
+}
+
+.tab-btn.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+  background: rgba(9, 82, 154, 0.04);
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.is-active {
+  display: block;
+}
+
+/* ===== Star ratings ===== */
+.stars {
+  color: #f4a100;
+  font-size: 0.96rem;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+/* ===== Format tags on offer cards ===== */
+.offer-formats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.offer-format-tag {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.73rem;
+  font-weight: 700;
+  border: 1px solid var(--color-border);
+  background: rgba(11, 43, 83, 0.06);
+  color: var(--color-primary);
+}
+
+.offer-card-highlight .offer-formats {
+  border-top-color: rgba(255, 255, 255, 0.16);
+}
+
+.offer-card-highlight .offer-format-tag {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ===== Radio cards (formule inscription) ===== */
+.radio-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.radio-card-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 14px;
+  border: 2px solid rgba(255, 158, 27, 0.28);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.18s, background 0.18s, box-shadow 0.18s;
+}
+
+.radio-card-label:hover {
+  border-color: rgba(255, 158, 27, 0.6);
+  background: #fffdf8;
+}
+
+.radio-card-label input[type="radio"] {
+  display: none;
+}
+
+.radio-card-label:has(input:checked) {
+  border-color: var(--color-accent);
+  background: rgba(255, 158, 27, 0.07);
+  box-shadow: 0 0 0 3px rgba(255, 158, 27, 0.15);
+}
+
+.radio-card-label .rci {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.radio-card-label strong {
+  display: block;
+  color: var(--color-primary);
+  font-size: 0.92rem;
+  line-height: 1.3;
+}
+
+.radio-card-label .rcd {
+  color: var(--color-muted);
+  font-size: 0.78rem;
+}
+
+/* ===== Year pills ===== */
+.year-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: var(--space-2);
+}
+
+.year-pill {
+  cursor: pointer;
+}
+
+.year-pill input[type="radio"] {
+  display: none;
+}
+
+.year-pill span {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border: 1.5px solid rgba(255, 158, 27, 0.35);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--color-primary);
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.16s, background 0.16s;
+}
+
+.year-pill:hover span {
+  border-color: rgba(255, 158, 27, 0.7);
+  background: #fffdf8;
+}
+
+.year-pill input:checked + span {
+  border-color: var(--color-accent);
+  background: rgba(255, 158, 27, 0.1);
+  color: #7a4e08;
+}
+
+/* ===== Field radios inline ===== */
+.field-radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.field-radio-opt {
+  cursor: pointer;
+}
+
+.field-radio-opt input[type="radio"] {
+  display: none;
+}
+
+.field-radio-opt span {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 18px;
+  border: 1.5px solid rgba(255, 158, 27, 0.35);
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.16s, background 0.16s;
+}
+
+.field-radio-opt:hover span {
+  border-color: rgba(255, 158, 27, 0.7);
+  background: #fffdf8;
+}
+
+.field-radio-opt input:checked + span {
+  border-color: var(--color-accent);
+  background: rgba(255, 158, 27, 0.1);
+  color: #7a4e08;
+}
+
+/* ===== Conditional year field ===== */
+.year-field-row {
+  display: none;
+}
+
+.year-field-row.is-visible {
+  display: block;
+}
+
+/* ===== Responsive: new components ===== */
+@media (max-width: 900px) {
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-item {
+    border-right: 1px solid rgba(255, 255, 255, 0.09);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  }
+
+  .stat-item:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .stat-item:nth-last-child(-n+2) {
+    border-bottom: 0;
+  }
+
+  .method-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .method-step {
+    border-right: 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .method-step:last-child {
+    border-bottom: 0;
+  }
+
+  .radio-cards {
+    grid-template-columns: 1fr;
+  }
+}

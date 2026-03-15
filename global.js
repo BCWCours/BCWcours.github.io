@@ -164,8 +164,48 @@
     });
   }
 
+  function initMatiereTabs() {
+    const tabBtns = document.querySelectorAll(".tab-btn");
+    if (!tabBtns.length) return;
+
+    tabBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        tabBtns.forEach((b) => {
+          b.classList.remove("active");
+          b.setAttribute("aria-selected", "false");
+        });
+        btn.classList.add("active");
+        btn.setAttribute("aria-selected", "true");
+
+        document.querySelectorAll(".tab-panel").forEach((p) => p.classList.remove("is-active"));
+        const panel = document.getElementById("tab-" + btn.dataset.tab);
+        if (panel) panel.classList.add("is-active");
+      });
+    });
+  }
+
+  function initYearField() {
+    const niveauRadios = document.querySelectorAll('input[name="niveau"]');
+    if (!niveauRadios.length) return;
+    const yearRow = document.getElementById("year-field-row");
+    if (!yearRow) return;
+
+    niveauRadios.forEach((radio) => {
+      radio.addEventListener("change", () => {
+        if (radio.value === "Secondaire") {
+          yearRow.classList.add("is-visible");
+        } else {
+          yearRow.classList.remove("is-visible");
+          yearRow.querySelectorAll('input[type="radio"]').forEach((r) => { r.checked = false; });
+        }
+      });
+    });
+  }
+
   initHeroRotator();
   initRevealAnimation();
+  initMatiereTabs();
+  initYearField();
   syncHeaderState();
   window.addEventListener("scroll", syncHeaderState, { passive: true });
 })();
