@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BCW Ops - Maquette V1</title>
+  <style>
+    :root {
+      --navy-950: #081a33;
+      --navy-900: #0b2b53;
+      --navy-700: #1f4e87;
+      --ink-900: #0f1f35;
+      --ink-700: #4e6078;
+      --line: rgba(15, 31, 53, 0.13);
+      --bg: #f2f6fc;
+      --card: #ffffff;
+      --accent: #c98d2f;
+      --accent-soft: #ffe5ba;
+      --ok: #1e8a5b;
+      --warn: #ad3f3f;
+      --radius: 16px;
+      --radius-lg: 22px;
+      --shadow: 0 18px 34px rgba(8, 26, 51, 0.1);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", Arial, sans-serif;
+      color: var(--ink-900);
+      background:
+        radial-gradient(900px 460px at 4% -12%, rgba(201, 141, 47, 0.2), transparent 60%),
+        radial-gradient(900px 460px at 96% 0%, rgba(31, 78, 135, 0.22), transparent 58%),
+        var(--bg);
+    }
+
+    .app-shell {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+    }
+
+    .sidebar {
+      background: linear-gradient(180deg, var(--navy-950), var(--navy-900));
+      color: #fff;
+      padding: 24px 16px;
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
+      position: sticky;
+      top: 0;
+      height: 100vh;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+    }
+
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 6px;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.1;
+    }
+
+    .brand p {
+      margin: 2px 0 0;
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.74);
+    }
+
+    .menu {
+      display: grid;
+      gap: 8px;
+    }
+
+    .menu a {
+      display: block;
+      padding: 11px 12px;
+      border-radius: 12px;
+      color: rgba(255, 255, 255, 0.88);
+      text-decoration: none;
+      font-weight: 650;
+      font-size: 0.92rem;
+      border: 1px solid transparent;
+    }
+
+    .menu a.active {
+      background: rgba(201, 141, 47, 0.24);
+      border-color: rgba(255, 229, 186, 0.42);
+      color: #fff;
+    }
+
+    .sidebar-foot {
+      margin-top: 26px;
+      padding: 14px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    .main {
+      padding: 24px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .topbar {
+      background: linear-gradient(120deg, #ffffff, #fff5e6);
+      border: 1px solid rgba(201, 141, 47, 0.34);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius-lg);
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .topbar h2 {
+      margin: 0;
+      font-size: 1.35rem;
+    }
+
+    .topbar p {
+      margin: 4px 0 0;
+      color: var(--ink-700);
+      font-size: 0.92rem;
+    }
+
+    .badges { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    .badge {
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      border: 1px solid transparent;
+    }
+
+    .badge.orange {
+      background: linear-gradient(180deg, #ffd79b, #c98d2f);
+      color: #3a2504;
+      border-color: rgba(130, 90, 20, 0.36);
+    }
+
+    .badge.blue {
+      background: rgba(31, 78, 135, 0.1);
+      color: var(--navy-700);
+      border-color: rgba(31, 78, 135, 0.2);
+    }
+
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 24px rgba(8, 26, 51, 0.07);
+      padding: 14px;
+    }
+
+    .kpi-value {
+      font-size: 1.55rem;
+      font-weight: 850;
+      color: var(--navy-900);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .kpi-label {
+      color: var(--ink-700);
+      font-size: 0.83rem;
+      font-weight: 600;
+    }
+
+    .kpi-trend {
+      margin-top: 8px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--ok);
+    }
+
+    .layout-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 14px;
+    }
+
+    .card-title {
+      margin: 0 0 12px;
+      font-size: 1rem;
+      color: var(--navy-900);
+    }
+
+    .kanban {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .col {
+      background: #f9fbff;
+      border: 1px solid rgba(15, 31, 53, 0.08);
+      border-radius: 12px;
+      padding: 9px;
+      min-height: 220px;
+    }
+
+    .col h4 {
+      margin: 0 0 8px;
+      font-size: 0.78rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--navy-700);
+    }
+
+    .lead {
+      background: #fff;
+      border-radius: 11px;
+      border: 1px solid var(--line);
+      padding: 9px;
+      margin-bottom: 8px;
+    }
+
+    .lead strong {
+      display: block;
+      font-size: 0.84rem;
+      margin-bottom: 4px;
+    }
+
+    .meta {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 7px;
+    }
+
+    .pill {
+      font-size: 0.68rem;
+      font-weight: 800;
+      border-radius: 999px;
+      padding: 4px 7px;
+      border: 1px solid var(--line);
+      background: #f4f7fb;
+      color: #23334c;
+    }
+
+    .pill.orange {
+      background: var(--accent-soft);
+      border-color: rgba(201, 141, 47, 0.4);
+      color: #653f09;
+    }
+
+    .stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .match-item {
+      padding: 10px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .match-item strong { font-size: 0.86rem; }
+
+    .match-score {
+      font-size: 0.73rem;
+      color: var(--ok);
+      font-weight: 800;
+      margin-top: 4px;
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+    }
+
+    .table th,
+    .table td {
+      text-align: left;
+      padding: 8px;
+      border-bottom: 1px solid rgba(15, 31, 53, 0.08);
+    }
+
+    .table th {
+      color: var(--ink-700);
+      font-size: 0.75rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 14px;
+    }
+
+    .form {
+      display: grid;
+      gap: 10px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .form label {
+      display: grid;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 750;
+      color: var(--navy-900);
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(201, 141, 47, 0.36);
+      border-radius: 10px;
+      padding: 9px 10px;
+      font: inherit;
+      color: var(--ink-900);
+      background: #fff;
+    }
+
+    textarea { min-height: 84px; resize: vertical; }
+
+    .btn {
+      border: 0;
+      border-radius: 999px;
+      padding: 11px 16px;
+      font-weight: 850;
+      background: linear-gradient(180deg, #ffd596, #ca8f31);
+      color: #332004;
+      width: fit-content;
+      box-shadow: 0 12px 24px rgba(201, 141, 47, 0.3);
+    }
+
+    .portal {
+      background: linear-gradient(160deg, var(--navy-900), var(--navy-700));
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .portal h3 { margin: 0 0 8px; }
+
+    .progress {
+      height: 9px;
+      background: rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      overflow: hidden;
+      margin: 7px 0 10px;
+    }
+
+    .progress > span {
+      display: block;
+      height: 100%;
+      width: 72%;
+      background: linear-gradient(90deg, #ffe6bd, #c98d2f);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 8px;
+      font-size: 0.84rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .note {
+      font-size: 0.78rem;
+      color: var(--ink-700);
+      margin-top: 6px;
+    }
+
+    @media (max-width: 1180px) {
+      .app-shell { grid-template-columns: 1fr; }
+      .sidebar {
+        position: static;
+        height: auto;
+      }
+      .layout-grid,
+      .section-grid { grid-template-columns: 1fr; }
+      .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 840px) {
+      .kanban { grid-template-columns: 1fr 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      .kpis,
+      .kanban { grid-template-columns: 1fr; }
+      .main { padding: 14px; }
+      .topbar { padding: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-logo">
+          <img src="assets/logo-bcw.png" alt="BCW" />
+        </div>
+        <div>
+          <h1>BCW Ops</h1>
+          <p>Suivi eleve + gestion leads</p>
+        </div>
+      </div>
+
+      <nav class="menu">
+        <a class="active" href="#">Dashboard</a>
+        <a href="#">Leads</a>
+        <a href="#">Planning</a>
+        <a href="#">Eleves</a>
+        <a href="#">Comptes-rendus</a>
+        <a href="#">Notifications</a>
+        <a href="#">Parametres FR/NL</a>
+      </nav>
+
+      <div class="sidebar-foot">
+        V1 ciblee pour une equipe de 3.<br />
+        Objectif: moins d'administratif, plus de qualite pedagogique.
+      </div>
+    </aside>
+
+    <main class="main">
+      <section class="topbar">
+        <div>
+          <h2>Dashboard operationnel</h2>
+          <p>Vue unifiee: leads entrants, matching prof, planning et suivi de progression.</p>
+        </div>
+        <div class="badges">
+          <span class="badge orange">Priorite: Examens</span>
+          <span class="badge blue">FR / NL actif</span>
+          <span class="badge blue">SLA: 24h</span>
+        </div>
+      </section>
+
+      <section class="kpis">
+        <article class="card">
+          <div class="kpi-value">38</div>
+          <div class="kpi-label">Leads ce mois</div>
+          <div class="kpi-trend">+19% vs mois precedent</div>
+        </article>
+        <article class="card">
+          <div class="kpi-value">12</div>
+          <div class="kpi-label">Leads a rappeler</div>
+          <div class="kpi-trend">Objectif: < 24h</div>
+        </article>
+        <article class="card">
+          <div class="kpi-value">27</div>
+          <div class="kpi-label">Eleves actifs</div>
+          <div class="kpi-trend">Secondaire + Superieur</div>
+        </article>
+        <article class="card">
+          <div class="kpi-value">91%</div>
+          <div class="kpi-label">Taux de conversion</div>
+          <div class="kpi-trend">Contacte -> planifie</div>
+        </article>
+      </section>
+
+      <section class="layout-grid">
+        <article class="card">
+          <h3 class="card-title">Pipeline des leads</h3>
+          <div class="kanban">
+            <div class="col">
+              <h4>Nouveaux (4)</h4>
+              <div class="lead">
+                <strong>Maths - 5e sec</strong>
+                Parent, Uccle
+                <div class="meta"><span class="pill orange">Urgent</span><span class="pill">A domicile</span></div>
+              </div>
+              <div class="lead">
+                <strong>Compta - Bac 1</strong>
+                Etudiant, Ixelles
+                <div class="meta"><span class="pill">En ligne</span></div>
+              </div>
+            </div>
+            <div class="col">
+              <h4>Contactes (5)</h4>
+              <div class="lead">
+                <strong>Physique - 6e sec</strong>
+                Parent, Woluwe
+                <div class="meta"><span class="pill">Bruxelles</span></div>
+              </div>
+              <div class="lead">
+                <strong>Finance - Bac 2</strong>
+                Etudiante, Etterbeek
+                <div class="meta"><span class="pill orange">Examens</span></div>
+              </div>
+            </div>
+            <div class="col">
+              <h4>Planifies (3)</h4>
+              <div class="lead">
+                <strong>Statistiques - Bac 1</strong>
+                Session lundi 18:00
+                <div class="meta"><span class="pill">En ligne</span></div>
+              </div>
+            </div>
+            <div class="col">
+              <h4>En cours (9)</h4>
+              <div class="lead">
+                <strong>NL - 4e sec</strong>
+                Suivi hebdo
+                <div class="meta"><span class="pill">A domicile</span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="stack">
+          <article class="card">
+            <h3 class="card-title">Matching prof suggere</h3>
+            <div class="match-item">
+              <strong>Lead: Finance Bac 2</strong>
+              <div class="note">Prof suggere: Sami</div>
+              <div class="match-score">Match 94% (matiere + dispo + format)</div>
+            </div>
+            <div class="match-item" style="margin-top:8px;">
+              <strong>Lead: Maths 5e sec</strong>
+              <div class="note">Prof suggere: Bilal</div>
+              <div class="match-score">Match 91%</div>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">Notifications automatiques</h3>
+            <div class="note">1. Confirmation parent envoyee</div>
+            <div class="note">2. Rappel seance +24h programme</div>
+            <div class="note">3. Demande feedback apres seance</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-grid">
+        <article class="card">
+          <h3 class="card-title">Compte-rendu de seance</h3>
+          <form class="form">
+            <div class="form-row">
+              <label>Eleve
+                <select>
+                  <option>Leila B. - 5e secondaire</option>
+                </select>
+              </label>
+              <label>Matiere
+                <select>
+                  <option>Mathematiques</option>
+                </select>
+              </label>
+            </div>
+            <div class="form-row">
+              <label>Objectif de la seance
+                <input value="Fonctions + exercices type examen" />
+              </label>
+              <label>Niveau de comprehension
+                <select>
+                  <option>Bon (a consolider)</option>
+                </select>
+              </label>
+            </div>
+            <label>Feedback parent/eleve
+              <textarea>Points acquis: lecture graphique, methode. A travailler: vitesse et redaction.</textarea>
+            </label>
+            <button type="button" class="btn">Enregistrer et partager</button>
+          </form>
+        </article>
+
+        <div class="stack">
+          <article class="card portal">
+            <h3>Vue parent / eleve</h3>
+            <div style="font-size:0.86rem; opacity:.9;">Progression en mathematiques</div>
+            <div class="progress"><span></span></div>
+            <div class="timeline">
+              <div>Prochaine seance: Mardi 17:30 (En ligne)</div>
+              <div>Devoir assigne: 8 exercices chapitre fonctions</div>
+              <div>Compte-rendu disponible en FR/NL</div>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">Planning du jour</h3>
+            <table class="table">
+              <thead>
+                <tr><th>Heure</th><th>Eleve</th><th>Format</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>16:00</td><td>Yasmine - NL</td><td>Bruxelles</td></tr>
+                <tr><td>18:00</td><td>Noah - Stats</td><td>En ligne</td></tr>
+                <tr><td>19:30</td><td>Adam - Compta</td><td>A domicile</td></tr>
+              </tbody>
+            </table>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
