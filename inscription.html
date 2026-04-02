@@ -163,27 +163,65 @@
               </div>
             </fieldset>
 
-            <!-- 4. Niveau -->
+            <!-- 4. Niveau & Année -->
             <fieldset>
-              <legend>Niveau *</legend>
+              <legend>Niveau &amp; Année</legend>
               <div class="form-grid">
-                <label class="full-width">
-                  <span>Année / Classe</span>
-                  <select name="niveau" required>
-                    <option value="" disabled selected>Choisissez votre année</option>
+                <div class="full-width">
+                  <label style="display:block;margin-bottom:8px;font-weight:700;font-size:.92rem;color:var(--color-primary)">
+                    Niveau *
+                  </label>
+                  <div class="field-radio-group" role="radiogroup">
+                    <label class="field-radio-opt">
+                      <input type="radio" name="niveau" value="Primaire" required />
+                      <span>Primaire</span>
+                    </label>
+                    <label class="field-radio-opt">
+                      <input type="radio" name="niveau" value="Secondaire" />
+                      <span>Secondaire</span>
+                    </label>
+                    <label class="field-radio-opt">
+                      <input type="radio" name="niveau" value="Enseignement supérieur" />
+                      <span>Enseignement supérieur</span>
+                    </label>
+                    <label class="field-radio-opt">
+                      <input type="radio" name="niveau" value="Autre" />
+                      <span>Autre</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Année en cascade selon niveau -->
+                <div class="full-width" id="school-year-wrap" style="display:none;">
+                  <label style="display:block;margin-bottom:8px;font-weight:700;font-size:.92rem;color:var(--color-primary)">
+                    Année / Classe *
+                  </label>
+                  <!-- Primaire -->
+                  <select name="school_year" id="select-primaire" class="school-year-select" style="display:none;" disabled>
+                    <option value="" disabled selected>Choisissez une année</option>
                     <option value="P4">P4 — 4ème primaire</option>
                     <option value="P5">P5 — 5ème primaire</option>
                     <option value="P6">P6 — 6ème primaire</option>
+                  </select>
+                  <!-- Secondaire -->
+                  <select name="school_year" id="select-secondaire" class="school-year-select" style="display:none;" disabled>
+                    <option value="" disabled selected>Choisissez une année</option>
                     <option value="S1">S1 — 1ère secondaire</option>
                     <option value="S2">S2 — 2ème secondaire</option>
                     <option value="S3">S3 — 3ème secondaire</option>
                     <option value="S4">S4 — 4ème secondaire</option>
                     <option value="S5">S5 — 5ème secondaire</option>
                     <option value="S6">S6 — 6ème secondaire</option>
+                  </select>
+                  <!-- Supérieur -->
+                  <select name="school_year" id="select-superieur" class="school-year-select" style="display:none;" disabled>
+                    <option value="" disabled selected>Choisissez une année</option>
                     <option value="Bac">Bac (1, 2 ou 3)</option>
                     <option value="Master">Master (1 ou 2)</option>
                   </select>
-                </label>
+                  <!-- Autre -->
+                  <input type="text" name="school_year" id="input-autre" class="school-year-select" style="display:none;" disabled placeholder="Précisez votre niveau..." autocomplete="off" />
+                </div>
               </div>
             </fieldset>
 
@@ -275,7 +313,7 @@
   </div>
 </footer>
 
-<script src="global.js?v=20260402c"></script>
-<script src="form.js?v=20260402c"></script>
+<script src="global.js?v=20260402d"></script>
+<script src="form.js?v=20260402d"></script>
 </body>
 </html>

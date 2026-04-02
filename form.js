@@ -44,6 +44,8 @@
     const schoolType = String(formData.get("school_type") || "").trim();
     const schoolName = String(formData.get("school_name") || "").trim();
     const level = String(formData.get("niveau") || "").trim();
+    const activeYearEl = contactForm.querySelector('[name="school_year"]:not([disabled])');
+    const schoolYear = activeYearEl ? String(activeYearEl.value || "").trim() : "";
     const formula = String(formData.get("formula") || "").trim();
     const message = String(formData.get("message") || "").trim();
     const sourceChannelRaw = String(formData.get("source_channel") || "").trim();
@@ -58,7 +60,7 @@
     const otherSubject = String(formData.get("subjectOther") || "").trim();
 
     // --- Validation ---
-    if (!name || !email || !phone || !level || !schoolName || !schoolType || !formula || !sourceChannel) {
+    if (!name || !email || !phone || !level || !schoolName || !schoolType || !formula || !schoolYear || !sourceChannel) {
       contactForm.reportValidity();
       setFormStatus("Veuillez completer les champs obligatoires.", "error");
       return;
@@ -89,6 +91,7 @@
       school_type: schoolType,
       school_name: schoolName,
       level: level,
+      school_year: schoolYear || null,
       format: formula,
       message: message || null,
       source_channel: sourceChannel,
