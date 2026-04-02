@@ -191,10 +191,45 @@
                   </div>
                 </div>
 
-                <label class="full-width">
-                  <span>Annee / Classe *</span>
-                  <input type="text" name="school_year" required placeholder="4eme secondaire, Bac 2, Master 1..." autocomplete="off" />
-                </label>
+                <!-- Année en cascade selon niveau -->
+                <div class="full-width" id="school-year-wrap" style="display:none;">
+                  <label style="display:block;margin-bottom:8px;font-weight:700;font-size:.92rem;color:var(--color-primary)">
+                    Année / Classe *
+                  </label>
+                  <!-- Primaire -->
+                  <select name="school_year" id="select-primaire" class="school-year-select" style="display:none;" disabled>
+                    <option value="" disabled selected>Choisissez une année</option>
+                    <option>1ère primaire</option>
+                    <option>2ème primaire</option>
+                    <option>3ème primaire</option>
+                    <option>4ème primaire</option>
+                    <option>5ème primaire</option>
+                    <option>6ème primaire</option>
+                  </select>
+                  <!-- Secondaire -->
+                  <select name="school_year" id="select-secondaire" class="school-year-select" style="display:none;" disabled>
+                    <option value="" disabled selected>Choisissez une année</option>
+                    <option>1ère secondaire</option>
+                    <option>2ème secondaire</option>
+                    <option>3ème secondaire</option>
+                    <option>4ème secondaire</option>
+                    <option>5ème secondaire</option>
+                    <option>6ème secondaire</option>
+                    <option>7ème secondaire</option>
+                  </select>
+                  <!-- Supérieur -->
+                  <select name="school_year" id="select-superieur" class="school-year-select" style="display:none;" disabled>
+                    <option value="" disabled selected>Choisissez une année</option>
+                    <option>Bac 1</option>
+                    <option>Bac 2</option>
+                    <option>Bac 3</option>
+                    <option>Master 1</option>
+                    <option>Master 2</option>
+                    <option>Autre</option>
+                  </select>
+                  <!-- Autre -->
+                  <input type="text" name="school_year" id="input-autre" class="school-year-select" style="display:none;" disabled placeholder="Précisez votre niveau..." autocomplete="off" />
+                </div>
               </div>
             </fieldset>
 

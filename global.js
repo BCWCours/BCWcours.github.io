@@ -187,17 +187,36 @@
   function initYearField() {
     const niveauRadios = document.querySelectorAll('input[name="niveau"]');
     if (!niveauRadios.length) return;
-    const yearRow = document.getElementById("year-field-row");
-    if (!yearRow) return;
+    const wrap = document.getElementById("school-year-wrap");
+    if (!wrap) return;
+
+    const selects = {
+      "Primaire": document.getElementById("select-primaire"),
+      "Secondaire": document.getElementById("select-secondaire"),
+      "Enseignement supérieur": document.getElementById("select-superieur"),
+      "Autre": document.getElementById("input-autre"),
+    };
+
+    function showYearFor(niveau) {
+      // hide + disable all
+      Object.values(selects).forEach((el) => {
+        if (!el) return;
+        el.style.display = "none";
+        el.disabled = true;
+        el.value = el.tagName === "SELECT" ? "" : "";
+      });
+      wrap.style.display = "none";
+
+      const target = selects[niveau];
+      if (!target) return;
+      wrap.style.display = "block";
+      target.style.display = "block";
+      target.disabled = false;
+    }
 
     niveauRadios.forEach((radio) => {
       radio.addEventListener("change", () => {
-        if (radio.value === "Secondaire") {
-          yearRow.classList.add("is-visible");
-        } else {
-          yearRow.classList.remove("is-visible");
-          yearRow.querySelectorAll('input[type="radio"]').forEach((r) => { r.checked = false; });
-        }
+        if (radio.checked) showYearFor(radio.value);
       });
     });
   }
