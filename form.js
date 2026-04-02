@@ -34,64 +34,67 @@
   contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    if (!contactForm.checkValidity()) {
-      contactForm.reportValidity();
-      setFormStatus("Veuillez compléter les champs obligatoires.", "error");
-      return;
-    }
-
-    const honeypotField = contactForm.querySelector('input[name="website"]');
-    if (honeypotField && honeypotField.value.trim()) {
-      setFormStatus("Envoi bloqué.", "error");
-      return;
-    }
-
     const formData = new FormData(contactForm);
+
+    // --- Collect values ---
+    const name = String(formData.get("name") || "").trim();
+    const parentName = String(formData.get("parent_name") || "").trim();
+    const email = String(formData.get("email") || "").trim();
+    const phone = String(formData.get("phone") || "").trim();
+    const schoolType = String(formData.get("school_type") || "").trim();
+    const schoolName = String(formData.get("school_name") || "").trim();
+    const level = String(formData.get("niveau") || "").trim();
+    const schoolYear = String(formData.get("school_year") || "").trim();
+    const formula = String(formData.get("formula") || "").trim();
+    const message = String(formData.get("message") || "").trim();
+    const sourceChannel = String(formData.get("source_channel") || "").trim();
 
     const selectedSubjects = Array.from(
       contactForm.querySelectorAll('input[name="subjects"]:checked')
     ).map((input) => input.value.trim()).filter(Boolean);
-    const subjectOther = String(formData.get("subjectOther") || "").trim();
+    const otherSubject = String(formData.get("subjectOther") || "").trim();
 
-    if (!selectedSubjects.length && !subjectOther) {
-      setFormStatus("Veuillez sélectionner au moins une matière.", "error");
+    // --- Validation ---
+    if (!name || !email || !phone || !level || !schoolName || !schoolType || !formula || !schoolYear || !sourceChannel) {
+      contactForm.reportValidity();
+      setFormStatus("Veuillez completer les champs obligatoires.", "error");
       return;
     }
 
-    const subjectString = [
-      ...selectedSubjects,
-      subjectOther ? `Autre: ${subjectOther}` : "",
-    ].filter(Boolean).join(" | ");
+    if (!selectedSubjects.length && !otherSubject) {
+      setFormStatus("Veuillez selectionner au moins une matiere.", "error");
+      return;
+    }
 
-    // Collect new fields
-    const parentName = String(formData.get("parent_name") || "").trim();
-    const schoolType = String(formData.get("school_type") || "").trim();
-    const schoolName = String(formData.get("school_name") || "").trim();
-    const niveau = String(formData.get("niveau") || "").trim();
-    const year = String(formData.get("year") || "").trim();
-    const formula = String(formData.get("formula") || "").trim();
-    const messageRaw = String(formData.get("message") || "").trim();
+    // Honeypot
+    const honeypotField = contactForm.querySelector('input[name="website"]');
+    if (honeypotField && honeypotField.value.trim()) {
+      setFormStatus("Envoi bloque.", "error");
+      return;
+    }
 
-    // Pack extra fields into message
-    const messageParts = [
-      parentName ? `Parent : ${parentName}` : null,
-      schoolType ? `Établissement : ${schoolType}${schoolName ? " — " + schoolName : ""}` : schoolName ? `École : ${schoolName}` : null,
-      year ? `Année : ${year}` : null,
-      messageRaw ? `\nMessage : ${messageRaw}` : null,
-    ].filter(Boolean);
+    // --- Build payload ---
+    const subjectsString = selectedSubjects.join(" | ");
 
     const payload = {
-      name: String(formData.get("name") || "").trim(),
-      email: String(formData.get("email") || "").trim(),
-      phone: String(formData.get("phone") || "").trim(),
-      level: niveau,
-      subject: subjectString,
-      format: formula || null,
-      urgency: null,
-      message: messageParts.join("\n"),
+      name: name,
+      parent_name: parentName || null,
+      email: email,
+      phone: phone,
+      subjects: subjectsString || null,
+      other_subject: otherSubject || null,
+      school_type: schoolType,
+      school_name: schoolName,
+      level: level,
+      school_year: schoolYear,
+      format: formula,
+      message: message || null,
+      source_channel: sourceChannel,
       source: "website",
+      status: "a_contacter",
     };
 
+    // --- Submit ---
     const submitButton = contactForm.querySelector('button[type="submit"]');
     const originalLabel = submitButton ? submitButton.textContent : "";
     if (submitButton) {
@@ -124,16 +127,13 @@
         throw new Error(`Supabase insert failed (${response.status}): ${errorDetails}`);
       }
 
-      setFormStatus("Merci. Votre demande a bien été envoyée.", "success");
+      setFormStatus("Votre demande a bien ete envoyee ! Nous vous contactons sous 24h.", "success");
       contactForm.reset();
-      const successUrl = contactForm.getAttribute("data-success-url") || "merci.html";
-      setTimeout(() => {
-        window.location.href = successUrl;
-      }, 650);
+      contactForm.style.display = "none";
     } catch (error) {
       console.error(error);
       setFormStatus(
-        "Erreur d'envoi. Vérifiez votre connexion puis réessayez.",
+        "Erreur d'envoi. Verifiez votre connexion puis reessayez.",
         "error"
       );
     } finally {

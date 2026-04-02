@@ -191,21 +191,10 @@
                   </div>
                 </div>
 
-                <!-- Année (visible only if Secondaire) -->
-                <div class="full-width year-field-row" id="year-field-row">
-                  <label style="display:block;margin-bottom:8px;font-weight:700;font-size:.92rem;color:var(--color-primary)">
-                    Année
-                  </label>
-                  <div class="year-grid" role="radiogroup">
-                    <label class="year-pill"><input type="radio" name="year" value="1ère" /><span>1ère</span></label>
-                    <label class="year-pill"><input type="radio" name="year" value="2ème" /><span>2ème</span></label>
-                    <label class="year-pill"><input type="radio" name="year" value="3ème" /><span>3ème</span></label>
-                    <label class="year-pill"><input type="radio" name="year" value="4ème" /><span>4ème</span></label>
-                    <label class="year-pill"><input type="radio" name="year" value="5ème" /><span>5ème</span></label>
-                    <label class="year-pill"><input type="radio" name="year" value="6ème" /><span>6ème</span></label>
-                    <label class="year-pill"><input type="radio" name="year" value="Autre" /><span>Autre</span></label>
-                  </div>
-                </div>
+                <label class="full-width">
+                  <span>Annee / Classe *</span>
+                  <input type="text" name="school_year" required placeholder="4eme secondaire, Bac 2, Master 1..." autocomplete="off" />
+                </label>
               </div>
             </fieldset>
 
@@ -241,6 +230,25 @@
                 <label class="full-width">
                   <span>Contexte, disponibilités, précisions</span>
                   <textarea name="message" rows="4" maxlength="3000" placeholder="Ex: objectif, période souhaitée, jour disponibles..."></textarea>
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- 7. Source -->
+            <fieldset>
+              <legend>Comment nous avez-vous decouverts ? *</legend>
+              <div class="form-grid">
+                <label class="full-width">
+                  <span>Source</span>
+                  <select name="source_channel" required>
+                    <option value="" disabled selected>Choisissez une option</option>
+                    <option value="Flyer boite aux lettres">Flyer boite aux lettres</option>
+                    <option value="Flyer en main propre">Flyer en main propre</option>
+                    <option value="Instagram ou Facebook">Instagram ou Facebook</option>
+                    <option value="Bouche-a-oreille">Bouche-a-oreille</option>
+                    <option value="Google">Google</option>
+                    <option value="Autre">Autre</option>
+                  </select>
                 </label>
               </div>
             </fieldset>
