@@ -134,7 +134,10 @@
 
       setFormStatus("Votre demande a bien ete envoyee ! Nous vous contactons sous 24h.", "success");
       contactForm.reset();
-      contactForm.style.display = "none";
+      const successUrl = contactForm.getAttribute("data-success-url") || "merci.html";
+      setTimeout(() => {
+        window.location.href = successUrl;
+      }, 650);
     } catch (error) {
       console.error(error);
       setFormStatus(
