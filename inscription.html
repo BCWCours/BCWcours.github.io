@@ -275,7 +275,7 @@
               <div class="form-grid">
                 <label class="full-width">
                   <span>Source</span>
-                  <select name="source_channel" required>
+                  <select name="source_channel" id="source-channel-select" required>
                     <option value="" disabled selected>Choisissez une option</option>
                     <option value="Flyer boite aux lettres">Flyer boite aux lettres</option>
                     <option value="Flyer en main propre">Flyer en main propre</option>
@@ -284,6 +284,10 @@
                     <option value="Google">Google</option>
                     <option value="Autre">Autre</option>
                   </select>
+                </label>
+                <label class="full-width" id="source-other-wrap" style="display:none;">
+                  <span>Précisez</span>
+                  <input type="text" name="source_channel_other" id="source-channel-other" placeholder="Comment nous avez-vous découverts ?" autocomplete="off" />
                 </label>
               </div>
             </fieldset>

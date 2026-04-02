@@ -221,10 +221,29 @@
     });
   }
 
+  function initSourceOther() {
+    const sel = document.getElementById("source-channel-select");
+    const wrap = document.getElementById("source-other-wrap");
+    const input = document.getElementById("source-channel-other");
+    if (!sel || !wrap || !input) return;
+
+    sel.addEventListener("change", () => {
+      if (sel.value === "Autre") {
+        wrap.style.display = "block";
+        input.required = true;
+      } else {
+        wrap.style.display = "none";
+        input.required = false;
+        input.value = "";
+      }
+    });
+  }
+
   initHeroRotator();
   initRevealAnimation();
   initMatiereTabs();
   initYearField();
+  initSourceOther();
   syncHeaderState();
   window.addEventListener("scroll", syncHeaderState, { passive: true });
 })();

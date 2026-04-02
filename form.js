@@ -49,7 +49,11 @@
     const schoolYear = activeYearEl ? String(activeYearEl.value || "").trim() : "";
     const formula = String(formData.get("formula") || "").trim();
     const message = String(formData.get("message") || "").trim();
-    const sourceChannel = String(formData.get("source_channel") || "").trim();
+    const sourceChannelRaw = String(formData.get("source_channel") || "").trim();
+    const sourceChannelOther = String(formData.get("source_channel_other") || "").trim();
+    const sourceChannel = sourceChannelRaw === "Autre" && sourceChannelOther
+      ? sourceChannelOther
+      : sourceChannelRaw;
 
     const selectedSubjects = Array.from(
       contactForm.querySelectorAll('input[name="subjects"]:checked')
