@@ -1,6 +1,6 @@
 (() => {
-  const SUPABASE_URL = "https://kiwuncwivajenqyinrqb.supabase.co";
-  const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_sxowccgePeTvJjwF68CIhQ_KMqiYTTw";
+  const SUPABASE_URL = "https://tfpctoufuokxridfkadc.supabase.co";
+  const SUPABASE_PUBLISHABLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRmcGN0b3VmdW9reHJpZGZrYWRjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUxMzQzOTMsImV4cCI6MjA5MDcxMDM5M30._I2c2pkwL4Ydp4Uzmd1HP1YrcpPxU2KFqo3xslvZS9k";
 
   const contactForm = document.getElementById("contact-form");
   const formStatus = document.getElementById("form-status");
